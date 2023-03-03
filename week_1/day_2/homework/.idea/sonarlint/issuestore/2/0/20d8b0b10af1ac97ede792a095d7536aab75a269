@@ -1,0 +1,7 @@
+
+k
+java:S1450"URemove the "memory" field and declare it as a local variable in the relevant methods.(…‘á¿
+V	java:S125"<This block of commented-out lines of code should be removed.(ó¨ó•¸ˇˇˇˇ
+y
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(≤˝Ö¶˚ˇˇˇˇ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Å≈…¡˚ˇˇˇˇ
