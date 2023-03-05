@@ -1,0 +1,27 @@
+
+C
+java:S1185$"(Remove this method to simply inherit it.(—»µûÿÿÿÿ
+U
+java:S1161$":Add the "@Override" annotation above this method signature(—»µûÿÿÿÿ
+C
+java:S1185)"(Remove this method to simply inherit it.(†¤ËÁÿÿÿÿÿ
+U
+java:S1161)":Add the "@Override" annotation above this method signature(†¤ËÁÿÿÿÿÿ
+>
+java:S1185-"(Remove this method to simply inherit it.(¢‰õò
+P
+java:S1161-":Add the "@Override" annotation above this method signature(¢‰õò
+>
+java:S11852"(Remove this method to simply inherit it.(ðà¸’
+P
+java:S11612":Add the "@Override" annotation above this method signature(ðà¸’
+>
+java:S11857"(Remove this method to simply inherit it.(“–ýþ
+P
+java:S11617":Add the "@Override" annotation above this method signature(“–ýþ
+m
+java:S3776E"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿˜º¯ûÿÿÿÿ
+U
+java:S1161E":Add the "@Override" annotation above this method signature(¿˜º¯ûÿÿÿÿ
+P
+java:S1117R":Rename "bounds" which hides the field declared at line 17.(½Ö¢³
