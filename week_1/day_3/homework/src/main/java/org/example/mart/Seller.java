@@ -1,12 +1,26 @@
 package org.example.mart;
 
-public class Seller extends Thread{
+/**
+ * Javadoc.
+ *
+ * @author 박상웅 javadoc.
+ */
+public class Seller extends Thread {
     Store store;
     String item;
     int itemNum;
 
-    //판매자가 무엇을 얼만큼 납품할지를 정함
-    public Seller(Store store, String item, int itemNum){
+
+
+    /**
+     * 판매자가 무엇을 얼만큼 납품할지를 정함.
+     *
+     * @param store : store 주입
+     * @param item : 물품 이름
+     * @param itemNum : 물품 갯수
+     *
+     */
+    public Seller(Store store, String item, int itemNum) {
         this.store = store;
         this.item = item;
         this.itemNum = itemNum;
@@ -17,7 +31,7 @@ public class Seller extends Thread{
      */
     @Override
     public void run() {
-        while(!Thread.interrupted()) {
+        while (!Thread.interrupted()) {
             store.sell(item, itemNum);
         }
     }

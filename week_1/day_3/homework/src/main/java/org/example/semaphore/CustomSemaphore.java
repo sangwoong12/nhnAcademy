@@ -1,21 +1,35 @@
 package org.example.semaphore;
 
-public class CustomSemaphore{
+/**
+ * Javadoc.
+ *
+ * @author 박상웅 javadoc.
+ */
+public class CustomSemaphore {
     SharePermit permit;
-    public CustomSemaphore(int permit){
+
+    public CustomSemaphore(int permit) {
         this.permit = new SharePermit(permit);
     }
-    public synchronized void acquire() throws InterruptedException{
-        while(permit.getPermit() == 0){
+
+    /**
+     * 0이면 yield 실행대기 상태로 되돌림. 아닐경우 디스카운트.
+     *
+     * @throws InterruptedException : semaphore와 같이 예외 발생.
+     */
+    public synchronized void acquire() throws InterruptedException {
+        while (permit.getPermit() == 0) {
             //실행대기 시켜 다시 진입하도록
             Thread.yield();
         }
         permit.decreasePermit();
     }
-    public void release(){
+
+    public void release() {
         permit.increasePermit();
     }
-    static class SharePermit{
+
+    static class SharePermit {
         int permit;
 
         public SharePermit(int permit) {
@@ -26,10 +40,11 @@ public class CustomSemaphore{
             return permit;
         }
 
-        public void increasePermit(){
+        public void increasePermit() {
             ++this.permit;
         }
-        public void decreasePermit(){
+
+        public void decreasePermit() {
             --this.permit;
         }
     }

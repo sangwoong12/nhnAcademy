@@ -3,13 +3,17 @@ package org.example.semaphore;
 import java.util.HashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-
+/**
+ * Javadoc.
+ *
+ * @author 박상웅 javadoc.
+ */
 public class Store {
     CustomSemaphore numOfCustomer;
     //품목 매장을 hashMap으로 구현
-    HashMap<String,Integer> itemStores = new HashMap<>();
+    HashMap<String, Integer> itemStores = new HashMap<>();
     //품목별 semaphore을 hashMap으로 구현
-    HashMap<String,CustomSemaphore> accessOfItem = new HashMap<>();
+    HashMap<String, CustomSemaphore> accessOfItem = new HashMap<>();
     //N개의 품목 매장, 품목별 semaphore 초기 등록
     /**
      * 요구사항 마트에서는 N개의 품목 매장이 있다.
@@ -17,23 +21,29 @@ public class Store {
      *
      * @param storeNames : N개의 품목
      */
-    public Store(String... storeNames){
-        for(String storeName : storeNames){
-            itemStores.put(storeName,0);
-            accessOfItem.put(storeName,new CustomSemaphore(1));
+
+    public Store(String... storeNames) {
+        for (String storeName : storeNames) {
+            itemStores.put(storeName, 0);
+            accessOfItem.put(storeName, new CustomSemaphore(1));
         }
         this.numOfCustomer = new CustomSemaphore(5);
     }
-    public void enter(){
-        try{
+    /**
+     * 손님이 입장하는 메서드.
+     */
+
+    public void enter() {
+        try {
             numOfCustomer.acquire();
-        }catch (InterruptedException ignore){
+        } catch (InterruptedException ignore) {
             Thread.currentThread().interrupt();
         }
     }
-    public void exit(){
+
+    public void exit() {
         numOfCustomer.release();
-        System.out.println(Thread.currentThread().getName()+" 퇴장");
+        System.out.println(Thread.currentThread().getName() + " 퇴장");
     }
 
     /**
@@ -44,23 +54,25 @@ public class Store {
      * @param item : 소비자가 살려는 품목
      * @param itemNum : 소비자가 살려는 품목의 갯수
      */
-    public void buy(String item,int itemNum){
-        try{
+    public void buy(String item, int itemNum) {
+        try {
             accessOfItem.get(item).acquire();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
         //살려는 갯수보다 있는 물품 갯수가 적으면 반복 , 구매 대기 알림은 한번만
-        System.out.println(Thread.currentThread().getName()+ " ["+item+":"+itemNum+"] 구매 대기");
-        while (itemStores.get(item) < itemNum){
-            try{
+        System.out.println(Thread.currentThread().getName() + " ["
+                + item + ":" + itemNum + "] 구매 대기");
+        while (itemStores.get(item) < itemNum) {
+            try {
                 Thread.sleep(100);
-            }catch (InterruptedException ignore){
+            } catch (InterruptedException ignore) {
                 Thread.currentThread().interrupt();
             }
         }
-        itemStores.put(item,itemStores.get(item)-itemNum);
-        System.out.println(Thread.currentThread().getName() +"손님 구매 완료, 제고 : ["+item+":"+itemStores.get(item)+"]");
+        itemStores.put(item, itemStores.get(item) - itemNum);
+        System.out.println(Thread.currentThread().getName()
+                + "손님 구매 완료, 제고 : [" + item + ":" + itemStores.get(item) + "]");
         accessOfItem.get(item).release();
     }
 
@@ -72,21 +84,22 @@ public class Store {
      * @param item : 생산자가 납품할 품목
      * @param num : 생산자가 납품할 품목의 갯수
      */
-    public synchronized void sell(String item,Integer num){
-        while (itemStores.get(item)+num > 10){
-            System.out.println(item+"가"+(itemStores.get(item)+num)+"로 초과하여 다른 생산자가 들어옵니다.");
-            try{
+    public synchronized void sell(String item, Integer num) {
+        while (itemStores.get(item) + num > 10) {
+            System.out.println(item + "가" + (itemStores.get(item) + num)
+                    + "로 초과하여 다른 생산자가 들어옵니다.");
+            try {
                 wait(100);
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
         //품목 매장에 제고 수정
-        itemStores.put(item,itemStores.get(item)+num);
-        System.out.println("납품 완료. 제고 : ["+item+":"+itemStores.get(item)+"]");
-        try{
-            Thread.sleep(ThreadLocalRandom.current().nextLong(1000,5000));
-        }catch (InterruptedException e){
+        itemStores.put(item, itemStores.get(item) + num);
+        System.out.println("납품 완료. 제고 : [" + item + ":" + itemStores.get(item) + "]");
+        try {
+            Thread.sleep(ThreadLocalRandom.current().nextLong(1000, 5000));
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
