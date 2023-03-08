@@ -1,0 +1,22 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(õ£Ö 
+e
+java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(íîÁ¿ùÿÿÿÿ
+_
+java:S2095"DUse try-with-resources or close this "Socket" in a "finally" clause.(©ˆ³Çýÿÿÿÿ
+p
+java:S3923	"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ÕœÉT
+=	java:S108	")Either remove or fill this block of code.(ÕœÉT
+>	java:S108")Either remove or fill this block of code.(á¢–¬
+[
+java:S1854"@Remove this useless assignment to local variable "serverSocket".(íîÁ¿ùÿÿÿÿ
+L
+java:S1481"1Remove this unused "serverSocket" local variable.(íîÁ¿ùÿÿÿÿ
+L
+java:S1854 "6Remove this useless assignment to local variable "bw".(Ž“Ô¥
+=
+java:S1481 "'Remove this unused "bw" local variable.(Ž“Ô¥
+7
+java:S1116%"Remove this empty statement.(Òƒ¸«ÿÿÿÿÿ

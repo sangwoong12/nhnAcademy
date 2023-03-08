@@ -1,11 +1,8 @@
 package org.example;
 
-import org.example.block.Blocks;
-import org.example.block.unbreakable.UnBreakMovableBlocks;
 import org.example.world.BarWorld;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Game extends JFrame {
     final BarWorld world;
