@@ -10,8 +10,6 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.concurrent.Semaphore;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -23,7 +21,7 @@ import org.apache.commons.cli.ParseException;
 /**
  * nc 프로그램과 유사하게 동작하는 simple-nc.
  */
-public class snc {
+public class Snc {
     static Options options = null;
     static Socket socket = null;
     static ServerSocket serverSocket = null;
@@ -31,7 +29,8 @@ public class snc {
     static CommandLine cmd = null;
 
     /**
-     * 인자가 없을경우 usage를 보여주고 아닐경우 옵션이 l 뿐이기 때문에 간단하게 if-else 로 처리
+     * 인자가 없을경우 usage 를 보여주고 아닐경우 옵션이 l 뿐이기 때문에 간단하게 if-else 로 처리.
+     *
      * @param args : [option] [hostname] [port]
      * @throws IOException : IO 예외처리
      * @throws ParseException : parse 예외처리
@@ -58,11 +57,6 @@ public class snc {
             sendThread.setSocket(socket);
             receiveThread.setSocket(socket);
             sendThread.start();
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
             receiveThread.start();
         }
     }
@@ -96,7 +90,7 @@ public class snc {
     /**
      * socket 생성을 담당한다. IP 주소 형식을 벗어나면 예외처리를 한다.
      *
-     * @param args : IP주소, 포트번호
+     * @param args : IP 주소, 포트번호
      * @throws IOException : 예외 처리
      */
     public static void client(String[] args) throws IOException {
@@ -136,11 +130,10 @@ public class snc {
                     receiveString = input.readLine();
                     System.out.println(receiveString);
                     System.out.println(this.isInterrupted());
-                    if(receiveString.equals("ctrl-c")){
+                    if (receiveString.equals("ctrl-c")) {
                         socket.close();
                         Thread.currentThread().interrupt();
-                    }
-                    else{
+                    } else {
                         output.write(receiveString);
                         output.newLine();
                         output.flush();
@@ -174,7 +167,7 @@ public class snc {
                     output.newLine();
                     output.flush();
 
-                    if(sendString.equals("ctrl-c")) {
+                    if (sendString.equals("ctrl-c")) {
                         socket.close();
                         Thread.currentThread().interrupt();
                     }
