@@ -1,0 +1,20 @@
+
+`	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+X
+java:S1854";Remove this useless assignment to local variable "console".(ÓØ»ë8ËËÉÿë0
+W
+java:S1854"<Remove this useless assignment to local variable "terminal".(Œ½àüùÿÿÿÿ
+U
+java:S1854":Remove this useless assignment to local variable "output".(éİÕŸùÿÿÿÿ
+V
+java:S1854"9Remove this useless assignment to local variable "input".(øÿá8ËËÉÿë0
+I
+java:S1481",Remove this unused "console" local variable.(ÓØ»ë8ÌËÉÿë0
+H
+java:S1481"-Remove this unused "terminal" local variable.(Œ½àüùÿÿÿÿ
+F
+java:S1481"+Remove this unused "output" local variable.(éİÕŸùÿÿÿÿ
+G
+java:S1481"*Remove this unused "input" local variable.(øÿá8ÌËÉÿë0
+>	java:S108")Either remove or fill this block of code.(Ôõû²
+D	java:S108")Either remove or fill this block of code.(Éò§+8ÌËÉÿë0

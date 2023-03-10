@@ -128,8 +128,6 @@ public class Snc {
                 String receiveString;
                 while (!Thread.interrupted()) {
                     receiveString = input.readLine();
-                    System.out.println(receiveString);
-                    System.out.println(this.isInterrupted());
                     if (receiveString.equals("ctrl-c")) {
                         socket.close();
                         Thread.currentThread().interrupt();
