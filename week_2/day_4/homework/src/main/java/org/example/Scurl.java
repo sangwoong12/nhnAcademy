@@ -1,11 +1,10 @@
 package org.example;
 
 import java.io.*;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.URL;
-import java.net.UnknownHostException;
-
+import java.net.*;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -14,210 +13,225 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
+/**
+ * Simple curl 동작 구현.
+ *
+ */
 public class Scurl {
+
     static Options options = null;
-    static Socket socket = null;
+    static Map<String, String> optionsMap = null;
     static URL url = null;
+    static DataOutputStream dos = null;
     static BufferedReader in = null;
     static BufferedWriter out = null;
-    static String request = null;
 
-    public static void main(String[] args) throws IOException {
+    static CommandLine parse = null;
+    static boolean header = false;
+    static StringBuilder requestHeader = null;
+    static StringBuilder responseHeader = null;
+    static StringBuilder data = null;
+    static int count = 1;
+    static String location = null;
+    static String status = "";
+
+    /**
+     * 필요한 인스턴스 초기화를 해주고 옵션에 따라 맵에 등록하여 처리 할수있도록 함.
+     *
+     * @param args : 인자 값에 따라 결과가 다름
+     * @throws IOException : 예외 처리.
+     * @throws ParseException : 예외 처리.
+     */
+    public static void main(String[] args) throws IOException, ParseException {
         CommandLineParser parser = getCommandLineParser();
-        if(args == null){
+        //초기 설정
+        optionsMap = new HashMap<>();
+        data = new StringBuilder();
+
+        try {
+            url = new URL(args[args.length - 1]);
+        } catch (MalformedURLException | NullPointerException e) {
             usage();
         }
-        else{
-            url = new URL(args[args.length - 1]);
-        }
-        boolean optionD = false;
-        String optionDValue = null;
-        boolean optionX = true;
-        boolean optionH = false;
-        String optionHValue = null;
-        boolean optionV = false;
 
-
-        try (Socket socket = new Socket(url.getHost(), 80)){
-
-            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        try (Socket socket = new Socket(url.getHost(), 80)) {
+            dos = new DataOutputStream(socket.getOutputStream());
+            out = new BufferedWriter(new OutputStreamWriter(dos));
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            CommandLine parse = parser.parse(options, args);
+            parse = parser.parse(options, args);
             for (Option option : parse.getOptions()) {
-                if (option.getOpt().equals("X")) {
-                    optionX(parse.getOptionValue("X").isEmpty() ? "/GET" : "/" + parse.getOptionValue("X"), url.getHost());
-                    optionX = false;
-                } else if (option.getOpt().equals("H")) {
-                    optionH = true;
-                    optionHValue = parse.getOptionValue("H");
-                } else if (option.getOpt().equals("d")) {
-                    optionD = true;
-                    optionDValue = parse.getOptionValue("d");
-                } else if (option.getOpt().equals("v")) {
-                    optionV = true;
-                } else if (option.getOpt().equals("F")){
-                    String[] fs = parse.getOptionValues("F");
-                    optionF(fs);
-                } else if (option.getOpt().equals("L")){
-
+                optionsMap.put(option.getOpt(), parse.getOptionValue(option));
+                if (option.getOpt().equals("v")) {
+                    header = true;
+                }
+                if (option.getOpt().equals("L")) {
+                    count = 5;
                 }
             }
-            //header 머리
-            if (optionX) {
-                optionX(url.getPath(), url.getHost());
+
+            while (count > 0) {
+                requestHeader = new StringBuilder();
+                responseHeader = new StringBuilder();
+                if (!status.matches("^(301|302|307|308)")){
+                    count = 0;
+                }
+                makeRequestHeader();
+                print(header);
+                count--;
             }
-            // 추가 요청 헤더
-            if(optionH){
-                optionH(optionHValue);
-            }
-            // POST PUT
-            if (optionD) {
-                optionD(optionDValue);
-            }
-            // 프린트
-            print(optionV);
+            out.close();
+            in.close();
+        } catch (IOException e) {
+            throw new IOException(e);
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            throw new ParseException("parse error");
         }
-
-
     }
 
-    public static void optionF(String[] optionValues) throws IOException {
-
-        String upload = optionValues[0];
-        String path = optionValues[1];
-        String[] split = path.split("/");
-        String fileName = split[split.length-1];
-        File file = new File(path);
-        FileInputStream fileInputStream = new FileInputStream(file);
-        out.write("Content-Type: application/json");
-
-        int bytesAvailable = fileInputStream.available();
-        int maxBufferSize = 1024;
-        int bufferSize = Math.min(bytesAvailable, maxBufferSize);
-        byte[] buffer = new byte[bufferSize];
-
-        DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-
-        int bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-        while (bytesRead > 0)
-        {
-            dos.write(buffer, 0, bufferSize);
-            bytesAvailable = fileInputStream.available();
-            bufferSize = Math.min(bytesAvailable, maxBufferSize);
-            bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+    /**
+     * 요청할때 필요한 헤더를 만드는 곳.
+     *
+     * @throws IOException : 예외 처리.
+     */
+    public static void makeRequestHeader() throws IOException {
+        if (optionsMap.containsKey("X")) {
+            String commend = parse.getOptionValue("X")
+                    .isEmpty() ? "GET" : parse.getOptionValue("X");
+            requestHeader.append(commend).append(" /")
+                    .append(commend.toLowerCase()).append(" HTTP/1.1 \r\n");
+        } else if (url.getPath().equals("/post")) {
+            requestHeader.append("POST").append(" ")
+                    .append(url.getPath()).append(" HTTP/1.1\r\n");
+        } else {
+            if (location != null) {
+                requestHeader.append("GET").append(" ")
+                        .append(location).append(" HTTP/1.1 \r\n");
+            } else {
+                requestHeader.append("GET").append(" ")
+                        .append(url.getPath()).append(" HTTP/1.1\r\n");
+            }
         }
-        dos.writeBytes("\r\n");
-        fileInputStream.close();
-
-        dos.flush();
-    }
-    public static void optionL(){
-
-    }
-    public static void optionD(String optionValue) throws IOException {
-        out.write("Content-Length: " + optionValue.length() + "\r\n\r\n");
-        out.write(optionValue);
-        out.write("\r\n");
-    }
-
-    public static void optionH(String optionValue) throws IOException {
-        out.write(optionValue + "\r\n");
-    }
-
-    public static void optionX(String command, String host) throws IOException {
-        if (command.equals("/get") || command.equals("/GET")) {
-            request = "GET /get HTTP/1.1";
-        } else if (command.equals("/post") || command.equals("/POST")) {
-            request = "POST /post HTTP/1.1";
-        } else if (command.equals("/head") || command.equals("/HEAD")){
-            request = "HEAD /head HTTP/1.1";
-        } else if (command.equals("/put") || command.equals("/PUT")){
-            request = "PUT /put HTTP/1.1";
-        } else if (command.equals("/delete") || command.equals("/DELETE")){
-            request = "DELETE /delete HTTP/1.1";
-        } else throw new IOException("Option -X 값이 잘못되었습니다.");
-        out.write(request + "\r\n");
-        out.write("Host: " + host + "\r\n");
-        out.write("User-Agent: Java" + "\r\n");
+        requestHeader.append("Host: ").append(url.getHost()).append("\r\n");
+        requestHeader.append("User-Agent: Java\r\n");
+        requestHeader.append("Accept: */*\r\n");
+        if (optionsMap.containsKey("H")) {
+            requestHeader.append(parse.getOptionValue("H")).append("\r\n");
+        }
+        if (optionsMap.containsKey("d")) {
+            requestHeader.append("Content-Length: ").append(parse.getOptionValue("d")
+                    .length()).append("\r\n\r\n");
+            data.append(parse.getOptionValue("d")).append("\r\n");
+        }
+        if (optionsMap.containsKey("F")) {
+            String boundaryTime = Long.toHexString(System.currentTimeMillis());
+            requestHeader.append("Connection: Keep-Alive\r\n");
+            fileUpload(parse.getOptionValues("F"));
+        }
+        if (optionsMap.containsKey("L")) {
+            count = 5;
+        }
     }
 
-    private static void print(boolean isAll) throws IOException {
+    private static synchronized void print(boolean isAll) throws IOException {
+        out.write(requestHeader.toString());
+        if (data.length() != 0) {
+            out.write(data.toString());
+        }
         out.write("\r\n");
         out.flush();
 
-        String line;
-        //응답
-        StringBuilder responseInfo = new StringBuilder();
-        makeResponseInfo(responseInfo);
         //필수 내용
-        StringBuilder info = new StringBuilder();
-        makeInfo(info);
-        //요청
-        StringBuilder requestInfo = new StringBuilder();
-        makeRequestInfo(requestInfo);
-
-        if (isAll) {
-            System.out.println(responseInfo);
-            System.out.println(requestInfo);
+        String line;
+        while ((line = in.readLine()) != null) {
+            if (line.contains("location: ")) {
+                location = line.replace("location: ", "");
+            }
+            if (line.contains("HTTP")) {
+                status = line;
+            }
+            responseHeader.append(line);
+            responseHeader.append("\n");
+            if (line.trim().length() == 0) {
+                break;
+            }
         }
-        System.out.println(info);
+        if (isAll) {
+            System.out.println("Request :");
+            System.out.println(requestHeader);
+            System.out.println("Response :");
+            System.out.println(responseHeader);
+        }
+        StringBuilder info = new StringBuilder();
 
-        in.close();
-        out.close();
+        makeInfo(info);
+
+        System.out.println(info);
     }
 
-    private static void makeResponseInfo(StringBuilder header) throws IOException {
-        String line;
-        while ((line = in.readLine()) != null && !line.equals("")) {
-            header.append(line);
-            header.append("\n");
+    /**
+     * 옵션 F에서 Upload 처리하는 곳.
+     *
+     * @param optionValues : F value
+     * @throws IOException : 예외처리.
+     */
+    public static void fileUpload(String[] optionValues) throws IOException {
+        String fileName = optionValues[0];
+        String path = optionValues[1];
+        File file = new File(path);
+
+        String boundaryTime = Long.toHexString(System.currentTimeMillis());
+        //data 길이 측정을 위해 별도 String Builder
+        try (BufferedInputStream inFile = new BufferedInputStream(new FileInputStream(file))) {
+            data.append("--").append(boundaryTime).append("\r\n");
+            data.append("Content-Disposition: form-data; name=\"").append(fileName)
+                    .append("\"; filename=\"").append(path).append("\"\r\n");
+            data.append("Content-Type: application/x-www-form-urlencoded\r\n");
+            data.append("Content-Transfer-Encoding: base64\r\n\r\n");
+            data.append(Base64.getMimeEncoder().encodeToString(inFile.readAllBytes()));
+            data.append("\r\n");
+            data.append("--").append(boundaryTime).append("--\r\n");
+            requestHeader.append("Content-Length: ").append(data.length()).append("\r\n");
+            requestHeader.append("Content-Type: multipart/form-data; boundary=")
+                    .append(boundaryTime).append("\r\n\r\n");
         }
     }
 
     private static void makeInfo(StringBuilder info) throws IOException {
-        String line;
-        while ((line = in.readLine()) != null) {
-            info.append(line);
+        while (in.ready()) {
+            info.append(in.readLine());
             info.append("\n");
-            if (!in.ready()) {
-                break;
-            }
         }
+
     }
 
-    private static void makeRequestInfo(StringBuilder requestInfo) throws UnknownHostException {
-        requestInfo.append("*   Trying" + InetAddress.getByName(url.getHost()) + "...");
-        requestInfo.append("* Connected to " + url.getHost() + "("
-                + InetAddress.getByName(url.getHost()) + ") port"  + url.getPort());
-        requestInfo.append(request);
-        requestInfo.append("Host: " + url.getHost());
-        requestInfo.append("User-Agent: java\r\n");
-    }
+    /**
+     * 옵션의 정보 등록.
+     *
+     * @return : 기본 파셔
+     */
 
-    private static CommandLineParser getCommandLineParser() {
+    public static CommandLineParser getCommandLineParser() {
         options = new Options();
-        options.addOption(Option.builder("v")
+        options.addOption(org.apache.commons.cli.Option.builder("v")
                 .desc("verbose, 요청, 응답 헤더를 출력합니다.")
                 .build());
-        options.addOption(Option.builder("H")
+        options.addOption(org.apache.commons.cli.Option.builder("H")
                 .desc("임의의 헤더를 서버로 전송합니다.")
                 .hasArg()
                 .argName("line")
                 .build());
-        options.addOption(Option.builder("d")
+        options.addOption(org.apache.commons.cli.Option.builder("d")
                 .desc("POST, PUT 등에 데이타를 전송합니다.")
                 .hasArg()
                 .argName("data")
                 .build());
-        options.addOption(Option.builder("X")
+        options.addOption(org.apache.commons.cli.Option.builder("X")
                 .desc("사용할 method 를 지정합니다. 지정되지 않은 경우 기본값은 GET 입니다.")
                 .hasArg()
                 .argName("command")
                 .build());
-        options.addOption(Option.builder("L")
+        options.addOption(org.apache.commons.cli.Option.builder("L")
                 .desc("서버의 응딥이 30x 계열이면 다음 응답을 따라 갑니다.")
                 .build());
         options.addOption(Option.builder("F")
@@ -231,6 +245,6 @@ public class Scurl {
 
     public static void usage() {
         HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("scurl [options] url\nOptions", options);
+        formatter.printHelp(" [options] url\nOptions", options);
     }
 }
