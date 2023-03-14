@@ -6,7 +6,7 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 /**
- * Service 로 부터 받은 header와 body를 Socket으로 전달
+ * Service 로 부터 받은 header와 body를 Socket으로 전달.
  */
 public class Response {
     Socket socket;
@@ -18,7 +18,7 @@ public class Response {
      * 생성자.
      *
      * @param so : socket 주입
-     * @throws IOException : 예외 처
+     * @throws IOException : 예외 처리
      */
 
     public Response(Socket so) throws IOException {

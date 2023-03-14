@@ -1,0 +1,12 @@
+
+[
+java:S1854"9Remove this useless assignment to local variable "users".(Û®Þ•ùÿÿÿÿ8óð¸Ïí0
+X	java:S125"<This block of commented-out lines of code should be removed.(ï”Ö¶8à¡¸Ïí0
+X	java:S125"<This block of commented-out lines of code should be removed.(ùð¦€8êƒ’Ìí0
+L
+java:S1481"*Remove this unused "users" local variable.(Û®Þ•ùÿÿÿÿ8ôð¸Ïí0
+X	java:S125"<This block of commented-out lines of code should be removed.(ªÁÕÝ8Ž»¸Ïí0
+X	java:S125"<This block of commented-out lines of code should be removed.(Þê…î8ªÑ¸Ïí0
+X	java:S125!"<This block of commented-out lines of code should be removed.(Þê…î8õð¸Ïí0
+C
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8æà»Ïí0

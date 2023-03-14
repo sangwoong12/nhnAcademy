@@ -190,7 +190,7 @@ public class Scurl {
             data.append("Content-Transfer-Encoding: base64\r\n\r\n");
             data.append(Base64.getMimeEncoder().encodeToString(inFile.readAllBytes()));
             data.append("\r\n");
-            data.append("--").append(boundaryTime).append("--\r\n");
+            data.append("--").append(boundaryTime).append("--\r\n");jjjkl
             requestHeader.append("Content-Length: ").append(data.length()).append("\r\n");
             requestHeader.append("Content-Type: multipart/form-data; boundary=")
                     .append(boundaryTime).append("\r\n\r\n");

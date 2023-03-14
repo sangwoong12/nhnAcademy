@@ -1,12 +1,17 @@
 package org.example;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.Map;
-import java.util.TimeZone;
+import java.util.Objects;
 
 /**
  * request 를 받아 response 를 만드는 역할.
@@ -16,6 +21,7 @@ public class Service extends Thread {
     Response response;
     StringBuilder body;
     StringBuilder responseHeader;
+    Status status;
 
     /**
      * 생성자.
@@ -34,30 +40,30 @@ public class Service extends Thread {
     @Override
     public void run() {
         request.run();
-        if (request.method == null) {
-            Thread.currentThread().interrupt();
-        } else if (request.method.equals("GET") && request.path.equals("/")) {
-            getPage();
-            makeResponseHeader();
-        } else if (request.method.equals("GET")) {
-            String[] split = request.path.split("/");
-            if (!split[split.length - 1].contains(".")) {
+        if (request.method.equals("GET")) {
+            if (request.path.equals("/")) {
+                status = Status.OK;
+                request.path = "";
                 getPage();
-                makeResponseHeader();
             } else {
-                makeGetResponseBody();
-                makeResponseHeader();
+                String[] split = request.path.split("/");
+                if (!split[split.length - 1].contains(".")) {
+                    status = Status.OK;
+                    getPage();
+                } else {
+                    makeGetResponseBody();
+                }
             }
         } else if (request.method.equals("DELETE")) {
             makeDeleteResponseBody();
-            makeResponseHeader();
         } else if (request.method.equals("POST")) {
             makePostResponseBody();
-            makeResponseHeader();
         } else {
-            responseHeader.append("HTTP/1.1 403 Forbidden \r\n");
+            status = Status.FORBIDDEN;
             body.append("Forbidden ");
         }
+
+        makeResponseHeader();
         response.run();
     }
 
@@ -70,25 +76,27 @@ public class Service extends Thread {
             String[] split = s.split("=");
 
             File dir = new File(request.currentPath + request.path);
-            String[] filenames = dir.list();
             boolean same = false;
             //겹치는지 확인
-            assert filenames != null;
-            for (String filename : filenames) {
+            String[] filenames = dir.list();
+            for (String filename : Objects.requireNonNull(filenames)) {
                 if (filename.equals(split[split.length - 1].replace("\"", ""))) {
                     same = true;
                     break;
                 }
             }
             if (same) {
-                responseHeader.append("HTTP/1.1 409 Conflict\r\n");
+                status = Status.CONFLICT;
                 body.append("Conflict");
             } else {
-                File file = new File(request.currentPath + request.path
-                        + split[split.length - 1].replace("\"", ""));
+                if (request.path.equals("/")) {
+                    request.path = "";
+                }
+                File file = new File(request.currentPath + request.path,
+                        split[split.length - 1].replace("\"", ""));
 
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-                    if(!file.exists()) {
+                    if (!file.exists()) {
                         file.createNewFile();
                     }
                     // 파일에 쓰기
@@ -96,40 +104,42 @@ public class Service extends Thread {
                     writer.newLine();
                     // 버퍼 및 스트림 뒷정리
                     writer.flush();
-                } catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-                responseHeader.append("HTTP/1.1 200 OK \r\n");
+                status = Status.OK;
                 body.append("Upload");
             }
         } else {
-            responseHeader.append("HTTP/1.1 405 Method Not Allowed\r\n");
+            status = Status.METHOD_NOT_ALLOWED;
             body.append("Method Not Allowed");
         }
     }
 
     private void makeDeleteResponseBody() {
+        if (request.path.equals("/")) {
+            request.path = "";
+        }
         //위치에 파일 여부 확인
         Map<String, String> bodyData = request.bodyData;
         String s = bodyData.get("Content-Disposition");
         String[] split = s.split("=");
-        String fileName = request.currentPath + request.path
-                + split[split.length - 1].replace("\"", "");
-        File file = new File(fileName);
+        File file = new File(request.currentPath + request.path,
+                split[split.length - 1].replace("\"", ""));
 
         //가능 여부
         if (file.exists()) {
             //Post man test 시 오래걸림
             boolean delete = file.delete();
-            if(delete){
-                responseHeader.append("HTTP/1.1 204 NO Content\r\n");
+            if (delete) {
+                status = Status.NO_CONTENT;
                 body.append("NO Content");
             }
         } else if (file.canWrite() && !file.canRead()) {
-            responseHeader.append("HTTP/1.1 403 Forbidden \r\n");
+            status = Status.FORBIDDEN;
             body.append("Forbidden");
         } else {
-            responseHeader.append("HTTP/1.1 404 NOT Found\r\n");
+            status = Status.NOT_FOUND;
             body.append("NOT Found");
         }
     }
@@ -137,21 +147,20 @@ public class Service extends Thread {
     private void makeGetResponseBody() {
         String fileName = request.currentPath + request.path;
         File file = new File(fileName);
-        try (FileReader reader = new FileReader(file)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             //파일이 존재하지 않거나 읽기 불가능 하면 FileNotFoundException 발생
-            int line;
-
-            responseHeader.append("HTTP/1.1 200 OK\r\n");
-
-            while ((line = reader.read()) != -1) {
-                body.append((char) line);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                body.append(new String(line.getBytes(), StandardCharsets.UTF_8));
+                body.append("\r\n");
             }
+            status = Status.OK;
         } catch (FileNotFoundException e) {
             if (file.canWrite()) { //쓰는게 가능하다면 파일은 있지만 읽기 권한이 없다는 걸 의미
-                responseHeader.append("HTTP/1.1 403 Forbidden\r\n");
+                status = Status.FORBIDDEN;
                 body.append("Forbidden");
             } else {
-                responseHeader.append("HTTP/1.1 404 Not Found\r\n");
+                status = Status.NOT_FOUND;
                 body.append("Not Found");
             }
         } catch (IOException e) {
@@ -163,7 +172,8 @@ public class Service extends Thread {
      * 기본적인 헤더 제작.
      */
     public void makeResponseHeader() {
-        responseHeader.append("Date: ").append(getServerTime()).append("\r\n");
+        responseHeader.append("HTTP/1.1 ").append(status.getCode()).append("\r\n");
+        responseHeader.append("Date: ").append(new Date()).append("\r\n");
         responseHeader.append("Content-Type: text/html; charset=utf-8\r\n");
         responseHeader.append("Content-Length: ").append(body.toString().length()).append("\r\n");
         responseHeader.append("Server: java\r\n");
@@ -182,22 +192,10 @@ public class Service extends Thread {
         File dir = new File(request.currentPath + request.path);
         String[] filenames = dir.list();
 
-        assert filenames != null;
-        for (String filename : filenames) {
-            body.append("<p><a href=\"").append(request.path.replace("/", ""))
+        for (String filename : Objects.requireNonNull(filenames)) {
+            body.append("<p><a href=\"").append(request.path)
                     .append("/").append(filename).append("\">").append(filename).append("</a></p>");
         }
         body.append("</body>");
-
-        responseHeader.append("HTTP/1.1 200 OK\r\n");
     }
-
-    private String getServerTime() {
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
-        dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
-        return dateFormat.format(calendar.getTime());
-    }
-
 }

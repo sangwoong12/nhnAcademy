@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * socket 에서 보낸 요청을 필요에 따라 데이터 구조화 하는곳.
+ * socket 으로 부터 request 받는 곳
  */
 public class Request {
     Socket socket;
@@ -34,81 +34,63 @@ public class Request {
         bodyData = new HashMap<>();
         inSocket = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         date = new StringBuilder();
+
     }
 
     /**
-     * socket 에서 보낸 데이터를 사용할 수 있게 전처리.
+     * socket 의 Request 를 받아 데이터를 활용할 수 있게 전처리 과정을 거침.
      */
     public void run() {
         try {
             currentPath = Paths.get("").toAbsolutePath().toString();
 
-            //method path 정보 얻기
+            System.out.println("First Line");
             String firstLine = inSocket.readLine();
-            if (firstLine != null) {
-                String[] s = firstLine.split(" ");
-                method = s[0];
-                path = s[1];
-            }
+            System.out.println(firstLine);
+            String[] firstLines = firstLine.split(" ");
+            method = firstLines[0].trim();
+            path = firstLines[1].trim();
+            System.out.println("Method :" + method + ": path:" + path);
             String line;
-
-            //header 정보 얻기
+            System.out.println("\r\nRequest Header");
             while ((line = inSocket.readLine()) != null) {
-                //boundary 라인이면 빠져나옴
-                if ((line.contains(boundary) && !boundary.equals(""))
-                        || line.trim().length() == 0) {
+                if (line.contains("boundary")) {
+                    String[] split = line.split("=");
+                    boundary = split[1];
+                }
+                //앞의 조건은 POST ,DELETE 에 해당 뒤의 조건은 GET에 해당
+                if (line.equals("--" + boundary) || (method.equals("GET")
+                        && line.trim().length() == 0)) {
                     break;
                 }
-                if (!line.isEmpty()) {
-                    try {
-                        if (line.contains("Content-Type:")) {
-                            String[] split = line.split("=");
-                            boundary = split[1];
-                        }
-                        makeMaps(line, requestHeader);
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        e.printStackTrace();
-                    }
+                if (line.trim().length() != 0) {
+                    System.out.println(line);
+                    String[] split = line.split(": ");
+                    requestHeader.put(split[0], split[1]);
                 }
             }
-
-            //GET 일경우 data 가 존재하지 않기때문에 skip
-            if (method == null) {
-                Thread.currentThread().interrupt();
-            } else {
-                if (!method.equals("GET")) {
-                    //data 정보 저장
-                    String line2;
-                    while ((line2 = inSocket.readLine()) != null) {
-                        if (line2.trim().length() == 0) {
-                            break;
-                        }
-                        if (!line2.contains(boundary)) {
-                            try {
-                                makeMaps(line2, bodyData);
-                            } catch (NullPointerException e) {
-                                e.printStackTrace();
-                            }
-                        }
+            //GET 일 경우 스킵
+            if (!method.equals("GET")) {
+                System.out.println("\r\nRequest Body Header");
+                while ((line = inSocket.readLine()) != null) {
+                    if (line.trim().length() == 0) {
+                        break;
                     }
-                    //data 내용 저장
-                    String line3;
-                    while ((line3 = inSocket.readLine()) != null) {
-                        if (line3.contains(boundary)) {
-                            break;
-                        }
-                        date.append(line3).append("\r\n");
-
+                    String[] split = line.split(": ");
+                    bodyData.put(split[0], split[1]);
+                    System.out.println(line);
+                }
+                System.out.println("\r\nRequest Body");
+                while ((line = inSocket.readLine()) != null) {
+                    if (line.equals("--" + boundary + "--")) {
+                        break;
                     }
+                    date.append(line).append("\r\n");
+                    System.out.println(line);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void makeMaps(String line2, Map<String, String> bodyData) {
-        String[] split = line2.split(": ");
-        bodyData.put(split[0], split[1]);
     }
 }
