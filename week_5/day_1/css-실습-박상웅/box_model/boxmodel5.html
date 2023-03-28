@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  table {
+    border-width: 3px;
+    background-color: #52E396;
+  }
+  tr, td {
+    padding: 2px;
+    width:150px;
+    height:150px;
+    text-align: center;
+  }
+
+  /* border-style 예제 클래스 */
+  .b1 {border-style:none;}
+  .b2 {border-style:hidden;}
+  .b3 {border-style:dotted;}
+  .b4 {border-style:dashed;}
+  .b5 {border-style:solid;}
+  .b6 {border-style:double;}
+  .b7 {border-style:groove;}
+  .b8 {border-style:ridge;}
+  .b9 {border-style:inset;}
+  .b10 {border-style:outset;}
+
+  /*
+    or
+
+    .box{
+        width: 200px;
+        height: 200px;
+        background:#CDEFDE;
+        border: dotted;
+        border-color:red;
+        border-width: 5px;
+    } 이처럼 두께, 스타일, 색상 표시 가능하다.
+    */
+    /*
+  .box{
+      border-bottom-style: dotted;
+  }
+
+  .box{
+      border-left-style: dotted;
+  }
+
+  .box{
+      border-right-style: dotted;
+  } 모형 끝모양 설정 가능함.
+  */
+</style>
+<body>
+
+<table>
+  <tr>
+    <td class="b1">none</td>
+    <td class="b2">hidden</td>
+    <td class="b3">dotted</td>
+    <td class="b4">dashed</td>
+  </tr>
+  <tr>
+    <td class="b5">solid</td>
+    <td class="b6">double</td>
+    <td class="b7">groove</td>
+    <td class="b8">ridge</td>
+  </tr>
+  <tr>
+    <td class="b9">inset</td>
+    <td class="b10">outset</td>
+  </tr>
+</table>
+</body>
+</html>

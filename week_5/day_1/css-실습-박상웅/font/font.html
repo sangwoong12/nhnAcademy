@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  div.one {
+    font-style: italic;
+    font-weight: bold;
+    font-size: .8em;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /* 둘의 동작방식은 일치하다. */
+  div.two {
+    font: italic bold .8em/1.2 Arial, Helvetica,
+    sans-serif;
+  }
+  div.three {
+      font-family: American Captain;
+      font-size: 20px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+  div.four {
+      font-family: 'Palette Mosaic', cursive;
+      font-size: 20px;
+  }
+</style>
+<body>
+  <div class="one">hello world</div>
+  <div class="two">hello world</div>
+  <div class="three">hello world</div>
+  <div class="four">hello world</div>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <body>
+  <span class="material-icons" style="font-size:30pt;">face</span>
+  <span class="material-icons" style="color:green;">search</span>
+  </body>
+</body>
+</html>

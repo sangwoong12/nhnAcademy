@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  div {
+    box-sizing: border-box;
+    width: 500px;
+    margin: 20px 0px;
+    padding: 20px;
+    border: 10px dotted #dadada; background-color: #eeeeee;
+  }
+  .borderbox {
+    background-clip: border-box;
+  }
+  .paddingbox {
+    background-clip: padding-box;
+  }
+  .contentbox {
+    background-clip: content-box;
+  }
+</style>
+<body>
+  <div class="borderbox">background-clip: border-box;</div>
+  <div class="paddingbox">background-clip: padding-box;</div>
+  <div class="contentbox">background-clip: content-box;</div>
+</body>
+</html>
