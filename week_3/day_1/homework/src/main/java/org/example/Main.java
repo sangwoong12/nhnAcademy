@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,6 +44,8 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException("readLine 오류");
         }
+        List<String> a = new ArrayList<>();
+
         Scanner scanner = new Scanner(System.in);
         boolean system = true;
 //        Set<String> keySet = maps.keySet();

@@ -60,15 +60,7 @@ public class Scurl {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
             parse = parser.parse(options, args);
-            for (Option option : parse.getOptions()) {
-                optionsMap.put(option.getOpt(), parse.getOptionValue(option));
-                if (option.getOpt().equals("v")) {
-                    header = true;
-                }
-                if (option.getOpt().equals("L")) {
-                    count = 5;
-                }
-            }
+
 
             while (count > 0) {
                 requestHeader = new StringBuilder();
@@ -190,7 +182,7 @@ public class Scurl {
             data.append("Content-Transfer-Encoding: base64\r\n\r\n");
             data.append(Base64.getMimeEncoder().encodeToString(inFile.readAllBytes()));
             data.append("\r\n");
-            data.append("--").append(boundaryTime).append("--\r\n");jjjkl
+            data.append("--").append(boundaryTime).append("--\r\n");
             requestHeader.append("Content-Length: ").append(data.length()).append("\r\n");
             requestHeader.append("Content-Type: multipart/form-data; boundary=")
                     .append(boundaryTime).append("\r\n\r\n");

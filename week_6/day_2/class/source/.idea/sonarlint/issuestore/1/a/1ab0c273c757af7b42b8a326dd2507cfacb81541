@@ -1,0 +1,6 @@
+
+`	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+l
+java:S34574"Q%n should be used in place of \n to produce the platform-specific line separator.(“ØÉ´şÿÿÿÿ
+\
+java:S19898"AHandle the "RuntimeException" thrown here in a "try/catch" block.(Ò‚Òéüÿÿÿÿ

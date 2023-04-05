@@ -1,0 +1,80 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+body{
+    text-align: center;
+}
+div{
+}
+img{
+    width: 90px;
+    height: 45px;
+}
+#btn-div{
+    margin: auto;
+    width: 100%;
+    height: 40px;
+    flex-direction: row;
+}
+#btn-prev-month{
+    height: 45px;
+    width: 90px;
+}
+#btn-next-month{
+    height: 45px;
+    width: 90px;
+}
+#btn-current-month{
+    height: 45px;
+    width: 90px;
+}
+#covid-top-div{
+    margin-top : 30px;
+    border-style: groove;
+    font-family: "Nanum Pen Script";
+    color: white;
+    background-color: darkolivegreen;
+    border-color: chocolate;
+    border-width: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 300px;
+}
+#covid-top-title{
+    font-size : 40px;
+    width: 100%;
+    height: 20%;
+}
+#covid-top-columns{
+    font-size : 30px;
+    width: 100%;
+    height: 80%;
+}
+.column{
+    display: inline-block;
+    width: 240px;
+    height: 120px;
+}
+p{
+    height: 20px;
+    width: auto;
+}
+table , tr , td {
+    border-style: groove;
+}
+td{
+    width: 50px;
+}
+table {
+    font-family: "Nanum Pen Script";
+    background-color: white;
+    font-size: 30px;
+    margin : auto;
+    width: 1000px;
+}
+#covid-table-div {
+    border-radius: 20px;
+    background-color: pink;
+    margin: auto;
+    width: 1030px;
+
+}

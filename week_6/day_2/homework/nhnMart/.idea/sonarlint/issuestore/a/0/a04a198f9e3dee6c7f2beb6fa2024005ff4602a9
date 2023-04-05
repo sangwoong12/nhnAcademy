@@ -1,0 +1,9 @@
+
+T
+java:S2130%"9Use "Integer.parseInt" for this string-to-int conversion.(°›ûûÿÿÿÿ
+s
+java:S1989%"XHandle the following exception that could be thrown by "valueOf": NumberFormatException.(°›ûûÿÿÿÿ
+D
+java:S1481(")Remove this unused "food" local variable.(×œ’¨ûÿÿÿÿ
+C	java:S108(")Either remove or fill this block of code.(×œ’¨ûÿÿÿÿ
+X	java:S125."<This block of commented-out lines of code should be removed.(†Š¯¶8°©ÒÜô0

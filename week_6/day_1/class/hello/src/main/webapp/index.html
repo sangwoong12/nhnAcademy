@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    window.addEventListener("DOMContentLoaded",function (){
+      const btnCookie = document.getElementById("btnCookie");
+      btnCookie.addEventListener("click",function (){
+        setCookie("locale","ko",1);
+      })
+    })
+  </script>
+</head>
+<body>
+  <a href="/hello">hello</a></br>
+  <a href="/now">now</a></br>
+  <a href="beautify.html">beautify</a></br>
+  <a href="multi.html">multi</a></br>
+  <a href="/counter">counter</a></br>
+  <a href="/request.html">request</a></br>
+  <a href="/response.html">response</a></br>
+  <a href="/set-cookie?locale=ko" target="_blank">set-cookie (ko)</a></br>
+  <a href="/set-cookie?locale=en" target="_blank">set-cookie (en)</a></br>
+  <a href="/read-cookie">read-cookie</a></br>
+  <button type="button" id="btnCookie">쿠키생성</button>
+
+  <a href="/domain-cookie/">domain-cookie</a></br>
+  <a href="/login.html">login</a></br>
+
+</body>
+</html>

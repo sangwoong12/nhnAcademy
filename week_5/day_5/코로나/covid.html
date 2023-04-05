@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="covid.css">
+    <script type="text/javascript" src="totalInfectionStatus.js"></script>
+    <script type="text/javascript" src="navigator.js"></script>
+    <script type="text/javascript" src="covid.js"></script>
+
+</head>
+<body>
+    <div id="btn-div">
+        <a href="#" id="btn-prev-month"><img src="image/left.png"/></a>
+        <a href="#" id="btn-current-month"><img src="image/today.png"/></a>
+        <a href="#" id="btn-next-month" ><img src="image/right.png"/></a>
+    </div>
+    <div id="covid-top-div">
+        <div id="covid-top-title">
+            코로나바이러스-19
+        </div>
+        <div id="covid-top-columns">
+            <div class="column">
+                누적 사망자수
+                <p id="acc-g-pnt-cnt"></p>
+            </div>
+            <div class="column">
+                누적 확진자수
+                <p id="acc-h-pnt-cnt"></p>
+            </div>
+            <div class="column">
+                누적 검사수
+                <p id="acc-exam-cnt"></p>
+            </div>
+            <div class="column">
+                인구 10만명당 사망
+                <p id="rate-deaths"></p>
+            </div>
+            <div class="column">
+                일일 확진
+                <p id="cnt-confirmations"></p>
+            </div>
+            <div class="column">
+                일일 사망
+                <p id="cnt-deaths"></p>
+            </div>
+            <div class="column">
+                일일 신규입원
+                <p id="cnt-hospitalizations"></p>
+            </div>
+            <div class="column">
+                일일 재원 위중증
+                <p id="cnt-severe-symptoms"></p>
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    <div id="covid-table-div">
+        <table id="covid-table">
+            <caption>연령대별</caption>
+            <thead>
+            <tr>
+                <th>구분</th>
+                <th>치명율</th>
+                <th>사망자수</th>
+                <th>확진자수</th>
+                <th>사망율</th>
+                <th>확진율</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </br>
+
+    </div>
+</body>
+</html>

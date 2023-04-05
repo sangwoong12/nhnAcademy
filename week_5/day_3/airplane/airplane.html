@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="airplane.css">
+    <script type="text/javascript" src="airplane.js"></script>
+    <title>Title</title>
+</head>
+<body>
+  <h1>국내선 항공스케줄 조회</h1>
+  <div>
+    <form id = "find-form">
+      <select id="departureId" name="departureId" required >
+        <option value="">공항선택(출발)</option>
+      </select>
+      <select id="arrivalId" name="arrivalId" required>
+        <option value="" >공항선택(도착)</option>
+      </select>
+      <input id="plandDate" name="plandDate" type="date"   required />
+      <button type="submit" id="btn-find">조회</button>
+    </form>
+  </div>
+  </br>
+  </br>
+  <div class="schedule-container" id="schedule-container">
+    <table id="schedule-tbl">
+      <thead>
+        <tr>
+          <th>항공편명</th>
+          <th>항공사명</th>
+          <th>출발시간</th>
+          <th>도착시간</th>
+          <th>일반석운임</th>
+          <th>비지니스석운임</th>
+          <th>출발공항</th>
+          <th>도착공항</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+  </div>
+</body>
+</html>

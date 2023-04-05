@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cart.css">
+    <title>Title</title>
+<!--    <script type="text/javascript" src="cart.js"></script>-->
+<!--    <script type="text/javascript" src="cart_xhr.js"></script>-->
+<!--    <script type="text/javascript" src="cart_xhr_promise.js"></script>-->
+    <script type="text/javascript" src="fetch_async_await.js"></script>
+</head>
+<body>
+    <form id="loginFormContainer">
+        <p>아아디 : <input type="text" id="userId" name="userId" class="input" value="nhnacademy"></p>
+        <p>비밀번호 : <input type="text" id="userPassword" name="userPassword" class="input" value="1234"></p>
+        <p><button type="submit">로그인</button></p>
+    </form>
+    <div id="loginSuccessContainer">
+        아이디: <span style="color:pink" class="login-userId" id="login-userId"></span>
+        이름: <span style="color:pink" class="login-userName" id="login-userName"></span>
+        카트아이디: <span style="color:pink" class="login-cartId" id="login-cartId"></span>
+    </div>
+    </br>
+    </br>
+    <div>
+        <table id="cartTable">
+            <h1>장바구니</h1>
+            <thead>
+                <tr>
+                    <th>제품(id)</th>
+                    <th>제품(명)</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>합계</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
