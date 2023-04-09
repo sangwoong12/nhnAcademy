@@ -1,0 +1,15 @@
+
+b	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(À–ÂÕ8‡ İ‡õ0
+g	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(­Šçøÿÿÿÿ8‡ İ‡õ0
+M
+java:S1135"2Complete the task associated to this TODO comment.(ì»Ğøÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(Û’ş¶
+^
+java:S1989 "AHandle the "RuntimeException" thrown here in a "try/catch" block.(À–ÂÕ8Œ İ‡õ0
+c
+java:S1989""AHandle the "RuntimeException" thrown here in a "try/catch" block.(­Šçøÿÿÿÿ8Œ İ‡õ0
+u
+java:S1989&"SHandle the following exception that could be thrown by "sendRedirect": IOException.(–½‘”ûÿÿÿÿ8Œ İ‡õ0
+O
+java:S1135%"2Complete the task associated to this TODO comment.(ş•û¯8 İ‡õ0

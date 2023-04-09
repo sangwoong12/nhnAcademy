@@ -1,6 +1,4 @@
 
-V
-&src/main/java/com/nhnacademy/Main.java,8/2/82f8567f8051dbdfe2908b84f6e3e695c2bda0d9
 C
 file/temp/test.html,b/2/b2c68b76122e9e7dd542583b418001489d9607e3
 >
@@ -19,23 +17,9 @@ M
 src/main/webapp/beautify.html,a/7/a7510189f296daad8718439d7995292d5d24c872
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-y
-Isrc/main/java/com/nhnacademy/hello/listener/MyServletContextListener.java,e/5/e5c848213924d06f29e4c07163454b880b8a248e
-p
-@src/main/java/com/nhnacademy/hello/listener/SessionListener.java,f/2/f2e5068820f0bd979573ff64f129a9cd8fcbeda2
-d
-4src/main/java/com/nhnacademy/hello/MultiServlet.java,2/6/26b01ebefd35a3378cf156fb2e03ee897c7f6e18
-k
-;src/main/java/com/nhnacademy/hello/FileDownloadServlet.java,c/5/c57af20ad4c7c9230f010c4dd78f1c070388c148
-i
-9src/main/java/com/nhnacademy/hello/FileUploadServlet.java,5/8/580d872666f17f6e58092a156d7704fcc92484ea
 d
 4src/main/java/com/nhnacademy/hello/HelloServlet.java,1/a/1ab0c273c757af7b42b8a326dd2507cfacb81541
 b
 2src/main/java/com/nhnacademy/hello/NowServlet.java,2/6/265199e1c582b2eb4aeb1175797fdea5507b2096
-i
-9src/main/java/com/nhnacademy/hello/ReadCookieServlet.java,d/d/ddf13ee2ce77263d7b26e896f88b282f030fae07
-f
-6src/main/java/com/nhnacademy/hello/RequestServlet.java,2/d/2d6ee9ab939cc5e666957cd1261358d545ee81d2
 g
 7src/main/java/com/nhnacademy/hello/BeautifyServlet.java,5/f/5f21c020587876f850b1e5601c6aceb1b8a2cfad
