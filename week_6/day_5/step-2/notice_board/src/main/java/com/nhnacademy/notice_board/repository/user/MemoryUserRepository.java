@@ -1,5 +1,6 @@
 package com.nhnacademy.notice_board.repository.user;
 
+import com.nhnacademy.notice_board.controller.exception.NotFoundIdException;
 import com.nhnacademy.notice_board.item.user.User;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class MemoryUserRepository implements UserRepository {
     @Override
     public User getUser(String id) {
         if (!userMap.containsKey(id)){
-            throw new RuntimeException("아이디가 존재하지 않습니다.");
+            throw new NotFoundIdException();
         }
         return userMap.get(id);
     }

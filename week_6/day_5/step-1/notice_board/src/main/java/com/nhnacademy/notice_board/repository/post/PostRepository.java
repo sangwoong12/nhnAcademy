@@ -11,4 +11,6 @@ public interface PostRepository {
     Post getPost(long id);
     List<Post> getPosts();
     boolean existById(long id);
+    int getTotalCount();
+    Page<Post> getPagedPosts(int page, int size);
 }

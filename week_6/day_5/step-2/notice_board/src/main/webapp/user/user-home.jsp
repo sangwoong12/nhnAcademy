@@ -20,7 +20,7 @@
 <body>
 <%@ include file="/header/header.jsp"%>
 <div>
-  <a href="/post-list.do"><fmt:message key="post-list"/></a></br>
+  <a href="/post-list.do?pageNum=1"><fmt:message key="post-list"/></a></br>
   <a href="/post-add.do"><fmt:message key="add-post"/></a>
 </div>
 </fmt:bundle>

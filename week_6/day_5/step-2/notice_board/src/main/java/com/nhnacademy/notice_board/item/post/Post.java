@@ -20,4 +20,5 @@ public interface Post {
 
     int getViewCount();
     void increaseViewCount();
+
 }

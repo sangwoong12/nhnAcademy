@@ -20,6 +20,7 @@ public class EditUserController implements Command {
         String profile = req.getParameter("profile");
 
         UserRepository userRepository = (UserRepository) req.getServletContext().getAttribute("userRepository");
+
         User user = new GeneralUser(id,name,password,profile);
 
         userRepository.modify(user);

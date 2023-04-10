@@ -30,7 +30,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="post" items="${postList}">
+            <c:forEach var="post" items="${pagePosts.list}">
                 <tr>
                     <td><a href = "/post-view.do?id=${post.id}">${post.title}</a></td>
                     <td>${post.writerUserId}</td>
@@ -39,6 +39,13 @@
             </c:forEach>
             </tbody>
         </table>
+    </div>
+    <div>
+    <c:forEach var="i" begin="1" end="${pagePosts.totalPageCount}">
+       | <a href="/post-list.do?pageNum=${i}">${i}</a> |
+    </c:forEach>
+    </div>
+    <div>
         <a href='/home.do'><fmt:message key="home"/></a>
     </div>
     </body>

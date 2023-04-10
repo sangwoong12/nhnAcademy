@@ -1,6 +1,6 @@
 package com.nhnacademy.notice_board.filter;
 
-import com.nhnacademy.notice_board.item.user.Admin;
+import com.nhnacademy.notice_board.item.user.Auth;
 import com.nhnacademy.notice_board.item.user.User;
 import com.nhnacademy.notice_board.repository.user.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
@@ -44,7 +43,7 @@ public class AuthCheckFilter implements Filter {
         else{
             User user = userRepository.getUser(id);
             log.info("user : {}",user.getName() );
-            if (user instanceof Admin) {
+            if (user.getAuth().equals(Auth.ADMIN)) {
                 filterChain.doFilter(servletRequest,servletResponse);
             } else {
                 RequestDispatcher rd = servletRequest.getRequestDispatcher("/permission-error.do");

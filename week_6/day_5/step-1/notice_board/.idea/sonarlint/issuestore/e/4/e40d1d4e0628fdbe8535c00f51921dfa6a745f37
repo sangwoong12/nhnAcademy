@@ -1,5 +1,0 @@
-
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ç¯ÓŒ8Ö—‚”ö0
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ïúáü8ÏÄ”ö0
-t
-java:S1128"WRemove this unused import 'com.nhnacademy.notice_board.repository.user.UserRepository'.(†ğ¥ë8áˆ”ö0

@@ -1,5 +1,6 @@
 package com.nhnacademy.notice_board.filter;
 
+import com.nhnacademy.notice_board.exception.NotFoundPostException;
 import com.nhnacademy.notice_board.repository.post.PostRepository;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +21,7 @@ public class ViewCountFilter implements Filter {
         PostRepository postRepository = (PostRepository) req.getServletContext().getAttribute("postRepository");
         String id = req.getParameter("id");
         if(!postRepository.existById(Long.parseLong(id))){
-            throw new RuntimeException("존재하지 않는 게시물 입니다.");
+            throw new NotFoundPostException();
         }
         //조회수 ++
         postRepository.getPost(Long.parseLong(id)).increaseViewCount();

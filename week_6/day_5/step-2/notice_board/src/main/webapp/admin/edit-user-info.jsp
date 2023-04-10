@@ -37,6 +37,7 @@
     </table>
         <input type="hidden" name="id" value="${user.id}">
         <input type="hidden" name="profile" value="${user.profileFileName}">
+        <input type="hidden" name="auth" value="${user.auth}">
 
     <div>
         <input type="submit" value="<fmt:message key="edit"/>">

@@ -36,20 +36,24 @@ public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 이미지 파일 경로 설정
         String id = req.getParameter("id");
-        String filePath = UPLOAD_DIR +"/" + id + ".jpeg";
+        UserRepository userRepository = (UserRepository) req.getServletContext().getAttribute("userRepository");
+        User user = userRepository.getUser(id);
+        if(user.getProfileFileName() != null){
+            String filePath = UPLOAD_DIR +"/" + user.getProfileFileName();
 
-        // 이미지 파일 읽기
-        File file = new File(filePath);
-        FileInputStream fis = new FileInputStream(file);
+            // 이미지 파일 읽기
+            File file = new File(filePath);
+            FileInputStream fis = new FileInputStream(file);
 
-        // 클라이언트로 이미지 전송
-        byte[] buffer = new byte[1024];
-        int read = 0;
-        resp.setContentType("image/jpeg");
-        while ((read = fis.read(buffer)) != -1) {
-            resp.getOutputStream().write(buffer, 0, read);
+            // 클라이언트로 이미지 전송
+            byte[] buffer = new byte[1024];
+            int read = 0;
+            resp.setContentType("image/jpeg");
+            while ((read = fis.read(buffer)) != -1) {
+                resp.getOutputStream().write(buffer, 0, read);
+            }
+            fis.close();
         }
-        fis.close();
     }
 
     @Override
@@ -73,12 +77,17 @@ public class ProfileServlet extends HttpServlet {
             //유저마다 구분하기 id + .jpg 로 등록 확장자는 jpeg 로 제한.
             profilePart.write(UPLOAD_DIR + File.separator + userInfoMap.get("id") + ".jpeg");
             profilePart.delete();
-            userInfoMap.put("profileFileName",userInfoMap.get("id") + ".jpg");
+            userInfoMap.put("profileFileName",userInfoMap.get("id") + ".jpeg");
 
         } else {
             userInfoMap.put("profileFileName",null);
         }
         UserRepository userRepository = (UserRepository) req.getServletContext().getAttribute("userRepository");
+
+        if(userRepository.existById(userInfoMap.get("id"))){
+            throw new RuntimeException("이미 존재하는 아이디입니다.");
+        }
+
         User user = new GeneralUser(userInfoMap.get("id"),userInfoMap.get("name"),userInfoMap.get("password"),userInfoMap.get("profileFileName"));
         userRepository.add(user);
 

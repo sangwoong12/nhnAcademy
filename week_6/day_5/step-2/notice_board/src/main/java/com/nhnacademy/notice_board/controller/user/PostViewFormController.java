@@ -1,6 +1,7 @@
 package com.nhnacademy.notice_board.controller.user;
 
 import com.nhnacademy.notice_board.controller.Command;
+import com.nhnacademy.notice_board.controller.exception.NotEnoughParameterException;
 import com.nhnacademy.notice_board.init.RequestMapping;
 import com.nhnacademy.notice_board.repository.post.PostRepository;
 
@@ -14,7 +15,7 @@ public class PostViewFormController implements Command {
         PostRepository postRepository = (PostRepository) req.getServletContext().getAttribute("postRepository");
         String id = req.getParameter("id");
         if(id == null){
-            throw new RuntimeException("id 값은 필수입니다.");
+            throw new NotEnoughParameterException();
         }
         req.setAttribute("post",postRepository.getPost(Long.parseLong(id)));
         req.setAttribute("id",req.getSession().getAttribute("id"));

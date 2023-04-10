@@ -12,4 +12,5 @@ public interface User {
 
     String getProfileFileName();
     void setProfileFileName(String profileFileName);
+    Auth getAuth();
 }

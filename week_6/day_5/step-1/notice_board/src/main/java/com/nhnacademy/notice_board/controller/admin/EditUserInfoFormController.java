@@ -1,6 +1,7 @@
 package com.nhnacademy.notice_board.controller.admin;
 
 import com.nhnacademy.notice_board.controller.Command;
+import com.nhnacademy.notice_board.exception.NotFoundIdException;
 import com.nhnacademy.notice_board.init.RequestMapping;
 import com.nhnacademy.notice_board.item.user.User;
 import com.nhnacademy.notice_board.repository.user.UserRepository;
@@ -18,7 +19,7 @@ public class EditUserInfoFormController implements Command {
         String id = req.getParameter("id");
 
         if (!userRepository.existById(id)) {
-            throw new RuntimeException("존재하지 않는 아이디입니다.");
+            throw new NotFoundIdException();
         } else {
             User user = userRepository.getUser(id);
             req.setAttribute("user",user);

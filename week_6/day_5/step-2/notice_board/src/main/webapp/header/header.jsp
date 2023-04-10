@@ -5,6 +5,7 @@
     <%
         Integer count = (Integer) request.getServletContext().getAttribute("count");
         long visitorCount = (long) request.getServletContext().getAttribute("visitorsCount");
+
     %>
 <head>
     <title>Title</title>

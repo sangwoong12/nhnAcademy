@@ -2,7 +2,7 @@ package com.nhnacademy.notice_board.controller.admin;
 
 import com.nhnacademy.notice_board.controller.Command;
 import com.nhnacademy.notice_board.init.RequestMapping;
-import com.nhnacademy.notice_board.item.user.GeneralUser;
+import com.nhnacademy.notice_board.item.user.UserImpl;
 import com.nhnacademy.notice_board.item.user.User;
 import com.nhnacademy.notice_board.repository.user.UserRepository;
 
@@ -18,9 +18,9 @@ public class EditUserController implements Command {
         String password = req.getParameter("password");
         String name = req.getParameter("name");
         String profile = req.getParameter("profile");
-
+        String auth = req.getParameter("auth");
         UserRepository userRepository = (UserRepository) req.getServletContext().getAttribute("userRepository");
-        User user = new GeneralUser(id,name,password,profile);
+        User user = new UserImpl(id,name,password,profile, auth);
 
         userRepository.modify(user);
 

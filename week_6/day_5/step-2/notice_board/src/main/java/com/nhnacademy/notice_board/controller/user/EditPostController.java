@@ -1,6 +1,8 @@
 package com.nhnacademy.notice_board.controller.user;
 
 import com.nhnacademy.notice_board.controller.Command;
+import com.nhnacademy.notice_board.controller.exception.NotEnoughParameterException;
+import com.nhnacademy.notice_board.controller.exception.NotPermissionException;
 import com.nhnacademy.notice_board.init.RequestMapping;
 import com.nhnacademy.notice_board.item.post.Post;
 import com.nhnacademy.notice_board.repository.post.PostRepository;
@@ -18,14 +20,17 @@ public class EditPostController implements Command {
         String content = req.getParameter("content");
         System.out.println(id+":"+title+":"+content);
         if(id == null || title == null || content == null){
-            throw new RuntimeException("id, title, content는 필수 입력값입니다.");
+            throw new NotEnoughParameterException();
         }
         Post post = postRepository.getPost(Long.parseLong(id));
-        if(post.getWriterUserId() != req.getSession().getAttribute("id")){
-            throw new RuntimeException("수정할 수 있는 권한이 없습니다.");
+        System.out.println(post.getWriterUserId()+":"+req.getSession().getAttribute("id"));
+        if(!post.getWriterUserId().equals(req.getSession().getAttribute("id"))){
+            throw new NotPermissionException();
         }
         post.setContent(content);
         post.setTitle(title);
+
+        postRepository.modify(post);
 
         return "redirect:/post-view.do?id="+id;
 

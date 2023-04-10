@@ -70,11 +70,13 @@ public class PostImpl implements Post {
         ++this.viewCount;
     }
 
-    public PostImpl(String title, String content, String writerUserId) {
+    public PostImpl(long id, String title, String content, String writerUserId, LocalDateTime writeTime, int viewCount) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.writerUserId = writerUserId;
-        this.writeTime = LocalDateTime.now();
-        this.viewCount = 0;
+        this.writeTime = writeTime;
+        this.viewCount = viewCount;
     }
+    public PostImpl(){};
 }

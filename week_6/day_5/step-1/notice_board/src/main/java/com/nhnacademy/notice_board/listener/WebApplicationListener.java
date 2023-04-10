@@ -39,12 +39,12 @@ public class WebApplicationListener implements ServletContextListener {
 
     private static void testData(PostRepository postRepository, UserRepository userRepository) {
         User user = GeneralUser.builder().id("user").password("12345").name("일반 유저").build();
-        User user1 = GeneralUser.builder().id("이병헌").password("12345").name("이병헌").build();
-        User user2 = GeneralUser.builder().id("장동건").password("12345").name("장동건").build();
-        User user3 = GeneralUser.builder().id("송강호").password("12345").name("송강호").build();
-        User user4 = GeneralUser.builder().id("황정민").password("12345").name("황정민").build();
-        User user5 = GeneralUser.builder().id("곽철용").password("12345").name("곽철용").build();
-        User user6 = GeneralUser.builder().id("문동은").password("12345").name("문동은").build();
+        User user1 = GeneralUser.builder().id("이병헌").password("12345").name("이병헌").profileFileName("이병헌.jpeg").build();
+        User user2 = GeneralUser.builder().id("장동건").password("12345").name("장동건").profileFileName("장동건.jpeg").build();
+        User user3 = GeneralUser.builder().id("송강호").password("12345").name("송강호").profileFileName("송강호.jpeg").build();
+        User user4 = GeneralUser.builder().id("황정민").password("12345").name("황정민").profileFileName("황정민.jpeg").build();
+        User user5 = GeneralUser.builder().id("곽철용").password("12345").name("곽철용").profileFileName("곽철용.jpeg").build();
+        User user6 = GeneralUser.builder().id("문동은").password("12345").name("문동은").profileFileName("문동은.jpeg").build();
 
         userRepository.add(user);
         userRepository.add(user1);
