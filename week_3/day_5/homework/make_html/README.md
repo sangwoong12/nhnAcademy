@@ -11,4 +11,4 @@
 
 html 파일은 아래와 같은 형식이 됩니다.
 
-<src img="week_3/day_5/homework/make_html/">
+<src img="download.png">
