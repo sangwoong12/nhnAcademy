@@ -11,5 +11,5 @@
 
 html 파일은 아래와 같은 형식이 됩니다.
 
-![example] (https://github.com/sangwoong12/nhnAcademy/blob/main/week_3/day_5/homework/make_html/download.png)
+![example](https://github.com/sangwoong12/nhnAcademy/blob/main/week_3/day_5/homework/make_html/download.png)
 
