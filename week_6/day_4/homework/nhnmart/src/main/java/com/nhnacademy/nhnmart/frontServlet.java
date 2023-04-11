@@ -42,7 +42,6 @@ public class frontServlet extends HttpServlet {
                 log.error("redirect-url : {}", view.substring(REDIRECT_PREFIX.length() + 1));
                 String url = view.substring(REDIRECT_PREFIX.length() + 1);
                 resp.sendRedirect(url);
-
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher(view);//jsp 한테 위임
                 log.error("view : {}",view);
@@ -50,7 +49,7 @@ public class frontServlet extends HttpServlet {
             }
         } catch (Exception e) {
             req.setAttribute("status_code", "400 Bad Request");
-            req.setAttribute("exception_type", "exception_type");
+            req.setAttribute("exception_type", e.getClass().getName());
             req.setAttribute("message", e.getMessage());
             req.setAttribute("exception", "exception");
             req.setAttribute("request_uri", req.getRequestURI());

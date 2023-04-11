@@ -1,8 +1,7 @@
 package com.nhnacademy.nhnmart.item;
 
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class BuyList {
     private final Map<Food,Integer> buyList = new HashMap<>();
@@ -13,8 +12,11 @@ public class BuyList {
     public Map<Food,Integer> getBuyList(){
         return buyList;
     }
-    public int getTotalPrice(){
-        return buyList.keySet().stream()
-                .mapToInt(food -> food.getPrice() * buyList.get(food)).sum();
+    public int getTotalPrice(List<Food> foodNames){
+        return foodNames.stream().mapToInt(foodName -> buyList.get(foodName) * foodName.getPrice()).sum();
     }
+    public void removeFood(List<Food> foodNames){
+        foodNames.stream().forEach(buyList::remove);
+    }
+
 }

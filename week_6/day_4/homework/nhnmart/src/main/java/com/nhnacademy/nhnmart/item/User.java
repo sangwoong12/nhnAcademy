@@ -10,7 +10,6 @@ public class User {
     String id;
     String password;
     int money;
-
     public void setMoney(int money) {
         this.money = money;
     }

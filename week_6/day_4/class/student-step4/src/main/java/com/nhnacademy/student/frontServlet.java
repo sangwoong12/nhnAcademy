@@ -16,6 +16,7 @@ import static javax.servlet.RequestDispatcher.*;
 @Slf4j
 @WebServlet(urlPatterns = "*.do")
 public class frontServlet extends HttpServlet {
+    
     private static final String REDIRECT_PREFIX = "redirect";
     private static final String GET = "GET";
     private static final String POST = "POST";

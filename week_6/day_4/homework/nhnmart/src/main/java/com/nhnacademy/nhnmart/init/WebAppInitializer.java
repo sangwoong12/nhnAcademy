@@ -1,6 +1,8 @@
 package com.nhnacademy.nhnmart.init;
 
-import javax.servlet.*;
+import javax.servlet.ServletContainerInitializer;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.HandlesTypes;
 import java.util.Set;
 

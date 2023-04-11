@@ -18,6 +18,6 @@ public class logoutController implements Command {
         if(Objects.nonNull(session)) {
             session.invalidate();
         }
-        return "/login.jsp";
+        return "/user/login.jsp";
     }
 }

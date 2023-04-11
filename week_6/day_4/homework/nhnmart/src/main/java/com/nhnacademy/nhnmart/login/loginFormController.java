@@ -15,9 +15,9 @@ public class loginFormController implements Command {
     public String execute(HttpServletRequest req, HttpServletResponse resp) {
         HttpSession session = req.getSession(false);
         if(Objects.isNull(session) || Objects.isNull(session.getAttribute("id")) ){
-            return "/login.jsp";
+            return "/user/login.jsp";
         }else{
-            return "/loginHome.jsp";
+            return "/user/loginHome.jsp";
         }
     }
 }

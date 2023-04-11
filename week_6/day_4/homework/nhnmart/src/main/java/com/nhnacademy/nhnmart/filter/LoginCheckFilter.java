@@ -1,6 +1,5 @@
 package com.nhnacademy.nhnmart.filter;
 
-import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -17,10 +16,9 @@ import java.util.Set;
         filterName = "loginCheckFilter",
         urlPatterns = "/*",
         initParams = {
-                @WebInitParam(name = "exclude-urls",value = "/login\n" + "/logout\n" + "/login.jsp")
+                @WebInitParam(name = "exclude-urls",value = "/login.do\n" + "/logout.do\n" + "/user/login.jsp\n" + "/nhnmart.css\n" + "/home.do\n" +"/change-lang.do\n" + "/index.jsp\n")
         }
 )
-@Slf4j
 public class LoginCheckFilter implements Filter {
     private final Set<String> excludeUrls = new HashSet<>();
 
@@ -35,11 +33,9 @@ public class LoginCheckFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String requestUri = ((HttpServletRequest) servletRequest).getRequestURI();
         if(!excludeUrls.contains(requestUri)){
-            System.out.println("로그인 관련 아니면 무조건 들어와");
             HttpSession session = ((HttpServletRequest) servletRequest).getSession(false);
             if(Objects.isNull(session)){
-                System.out.println("세션이 널이면 무조건 들어와");
-                RequestDispatcher rd = servletRequest.getRequestDispatcher("/login.jsp");
+                RequestDispatcher rd = servletRequest.getRequestDispatcher("/login.do");
                 rd.forward(servletRequest,servletResponse);
             } else {
                 filterChain.doFilter(servletRequest,servletResponse);
