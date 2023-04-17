@@ -35,6 +35,6 @@
 ## 7주차 정산과제 ( 간단한 spring-core 기반 프로젝트)
 - spring-core에 대해 전반적인 내용을 수업시간에 다룸
 - 이를 활용하여 간단한 프로젝트 제작
-- [spring core 프로젝트-0](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/homework/version-3)
-- [spring core 프로젝트-1](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/homework/springframework-project-final)
-- [spring core 프로젝트-2](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/homework/springframework-core-project)
+- [spring core 프로젝트-0](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springcore-version-3)
+- [spring core 프로젝트-1](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springframework-project-final)
+- [spring core 프로젝트-2](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springframework-core-project)
