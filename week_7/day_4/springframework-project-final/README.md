@@ -1,0 +1,18 @@
+- 프로젝트 단계
+  - 단계 1
+- 첨부파일 springframework-core-project.zip 을 다운로드 하여 TODO 항목을 모두 완성하세요.
+- 비어 있는 JunitTest 를 모두 작성하고 Pass 하도록 수정하세요.
+- 단계 1 에서 완성한 결과를 압축하여 제출하세요.
+  - sprfingframeowkr-project1-{이름}-todo1.zip
+- 단계 2
+  - 작성한 프로젝트를 spring framework 기반으로 동작하도록 수정하세요.
+  - 구현 로직은 모두 Spring Bean 으로 등록해야 합니다.
+  - 단 JavaConfig 으로 ComponentScan 해야합니다.
+  - 물론 Main 클래스도 Spring 애플리케이션을 기동할 수 있도록 수정해야 합니다.
+- 단계 3
+  - 다음 내용을 AOP 로 구현해야 합니다.
+  - com.nhnacademy.edu.springframework.project.service 의 모든 메소드는 AOP 로 실행 시간을 측정해야 합니다. (빠르게 처리되어야 합니다.)
+  - 다음과 같은 포멧으로 console log 를 찍고 스샷을 첨부하세요.
+  - [class name].[method name] [속도]ms
+- 단계 4
+  - spring framework 에 맞게 UnitTest 를 수정하세요.
