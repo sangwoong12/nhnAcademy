@@ -130,8 +130,8 @@ Q
 Ç
 Rsrc/main/java/com/nhnacademy/notice_board/controller/admin/EditUserController.java,9/0/90f4a07be7d27ad22b044291a0d1c5e0614987ab
 Å
-Qsrc/main/java/com/nhnacademy/notice_board/repository/post/JsonPostRepository.java,b/6/b6b1b6c616f613831d06b0f00d6aa70c9cee40c1
-Å
 Qsrc/main/java/com/nhnacademy/notice_board/repository/user/JsonUserRepository.java,3/1/315e82fa18a03ea3c0178105c5389382b5d095c0
 u
 Esrc/main/java/com/nhnacademy/notice_board/servlet/ProfileServlet.java,4/1/41b23aa428c2fa9087f47f14f0a2e5b9b1d5f44a
+Å
+Qsrc/main/java/com/nhnacademy/notice_board/repository/post/JsonPostRepository.java,b/6/b6b1b6c616f613831d06b0f00d6aa70c9cee40c1

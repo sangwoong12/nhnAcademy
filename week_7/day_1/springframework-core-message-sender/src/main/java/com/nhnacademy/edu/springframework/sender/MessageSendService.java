@@ -16,7 +16,7 @@ public class MessageSendService {
     private MessageSender messageSender;
 
     @Autowired
-    public MessageSendService(@Qualifier("emailMessageSender") MessageSender messageSender) {
+    public MessageSendService(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
 

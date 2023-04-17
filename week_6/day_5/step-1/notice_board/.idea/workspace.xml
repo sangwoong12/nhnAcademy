@@ -10,35 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7fe556a-30a6-4dc3-8baa-ee7ce6109fdd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/0/2/029a2aeb78f9b111c1ac36a502079bf18a6c16fd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/0/4/0496e19225e243a8af7603a4f338f3d6a62f5a77" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/2/2/22b3b0e2beac6e51116c78264675115ccabc9ae1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/3/2/3248eacd31c8d6a58c65698a56978502cfd461ea" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/3/b/3bde640cfcc907cd0baaee125b1f67849ed57ea3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/4/6/462a60b422ccf1443e5a6523fc86887875df3280" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/4/8/485e4fec572a018141d86896dccced48ade99f2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/5/d/5deb68e8fde88ac1d34130f91dde5ef3c0514e4f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/5/e/5e84a97f361926709c14e8c4dc1b92985529055d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/8/3/83a48df2bcbb01a5cffdbc75fd89579a68f32eb1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/8/e/8ebf1728ea76b6a63ab8e34e0b82f96c63ed6b81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/9/6/96cd473089519ea44d6ecc66c7c72255f4cbcf31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/b/f/bf2112fcc256dbb3f9d7b45e401e83e5b4e873c2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/c/1/c18fb10c14ae72919b1bd672bbd01a411ceb20c4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/d/6/d6905796a27c509c722e5b6398bdf1c88f8983f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/e/b/eb411c606cc11ea8b035c7e8df54454fe748b7dd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/e/f/efab129a85613844354182b64afff0187a1849d6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/f/1/f1d67a7ee35efa3e1601241987bec47697a781ba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/f/a/fa754db2131ee01d0c400fec431effd31358baa7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/f/a/fae6ad79586c6aa9be22e2220b435f23bb7153d0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/target/classes/org/example/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_1/day_4/blockGame/target/classes/org/example/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/src/main/java/com/nhnacademy/edu/springframework/config/ApplicationConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/src/main/java/com/nhnacademy/edu/springframework/config/MessageSenderConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/src/main/java/com/nhnacademy/edu/springframework/sender/MessageSendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/src/main/java/com/nhnacademy/edu/springframework/sender/MessageSendService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/annotation/AnnotationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/annotation/AnnotationMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/config/MessageSenderConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/config/MessageSenderConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/sender/MessageSendService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/target/classes/com/nhnacademy/edu/springframework/sender/MessageSendService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_7/day_1/springframework-core-message-sender/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +190,7 @@
       <workItem from="1680841050171" duration="59460000" />
       <workItem from="1681043891034" duration="5108000" />
       <workItem from="1681062450574" duration="1326000" />
-      <workItem from="1681089430851" duration="3136000" />
+      <workItem from="1681089430851" duration="3137000" />
     </task>
     <servers />
   </component>

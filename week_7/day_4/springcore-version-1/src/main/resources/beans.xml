@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <aop:aspectj-autoproxy/>
+    <context:property-placeholder location="classpath:item.properties" />
+
+    <bean id="doorayMessageSender" class="com.nhnacademy.edu.springframework.message_sender.DoorayMessageSender">
+        <constructor-arg ref="doorayHookSender"/>
+    </bean>
+
+    <bean id="doorayHookSender" class="com.nhn.dooray.client.DoorayHookSender">
+        <constructor-arg index="0" ref="restTemplate"/>
+        <constructor-arg index="1"
+                         value="${hookUrl}"/>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+
+    <bean id="loggingAspect" class="com.nhnacademy.edu.springframework.aspect.LoggingAspect">
+
+    </bean>
+
+    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.MessageSendService">
+        <constructor-arg ref="doorayMessageSender"/>
+    </bean>
+    <aop:config>
+        <aop:aspect id="aspect" ref="loggingAspect">
+            <aop:around method="loggingExecutionTime" pointcut="@annotation(elapsedTimeLog)"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
