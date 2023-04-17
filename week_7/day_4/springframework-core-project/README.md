@@ -34,7 +34,7 @@ WaterBill{city='장흥군', sector='임시용(상)', unitPrice=433, billTotal=12
   - 실행하는 스프링 빈의 모든 메소드의 실행시간을 elapse.log 파일에 저장하세요. (AOP 를 이용해야 합니다.)
 - 요구사항3
   - 테스트 코드를 작성하세요.
-- Test Coverage 는 50% 를 넘어야 합니다.
+  - Test Coverage 는 50% 를 넘어야 합니다.
   - IntelliJ 커버리지 테스트
 - 요구사항4
   - 원본 데이터가 CSV 형식에서 JSON 형식으로 변경되었습니다.
