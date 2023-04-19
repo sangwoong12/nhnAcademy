@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{add}"></title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
+<form method="post" th:action="@{${studentRequest.id == null ? '/student/register.do' : '/student/update.do' }}"
+      th:object="${studentRequest}">
+    <table>
+        <caption></caption>
+        <tbody>
+        <tr>
+            <th th:text="#{id}"></th>
+            <td><input type="text" th:field="*{id}" required/></td>
+        </tr>
+        <tr>
+            <th th:text="#{name}"></th>
+            <td><input type="text" th:field="*{name}" required/></td>
+        </tr>
+        <tr>
+            <th th:text="#{gender}"></th>
+            <td>
+                <input type="radio" th:field="*{gender}" value="M" th:text="#{${#nhnacademy.gender(T(com.nhnacademy.springmvcstudent.item.Gender).M)}}"/>
+                <input type="radio" th:field="*{gender}" value="F" th:text="#{${#nhnacademy.gender(T(com.nhnacademy.springmvcstudent.item.Gender).F)}}"/>
+                <input type="radio" th:field="*{gender}" value="C" th:text="#{${#nhnacademy.gender(T(com.nhnacademy.springmvcstudent.item.Gender).C)}}"/>
+            </td>
+        </tr>
+        <tr>
+            <th th:text="#{age}"></th>
+            <td><input type="number" th:field="*{age}" required/></td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <button type="submit" th:text="${studentRequest.id == null ? 'add' : 'modify'  }"></button>
+    </p>
+</form>
+</body>
+</html>

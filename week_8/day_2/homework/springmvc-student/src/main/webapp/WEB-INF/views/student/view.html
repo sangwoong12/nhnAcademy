@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{studentView}"></title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+</head>
+<body>
+<th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
+<table>
+    <tbody>
+    <tr>
+        <th th:text="#{id}"></th>
+        <td th:text="${student.id}"></td>
+    </tr>
+    <tr>
+        <th th:text="#{name}"></th>
+        <td th:text="${student.name}"></td>
+    </tr>
+    <tr>
+        <th th:text="#{gender}"></th>
+        <td th:text="${student.gender}"></td>
+    </tr>
+    <tr>
+        <th th:text="#{age}"></th>
+        <td th:text="${student.age}"></td>
+    </tr>
+    </tbody>
+</table>
+<ul>
+    <li><a th:href="@{/student/list.do}" th:text="#{studentList}"></a></li>
+    <li>
+        <a th:href="@{/student/update.do/{id}(id=${student.id})}" th:text="#{modify}"></a>
+    </li>
+    <li>
+        <form method="post" th:action="@{/student/delete.do/{id}(id=${student.id})}">
+            <button type="submit" th:text="#{delete}"></button>
+        </form>
+    </li>
+</ul>
+</body>
+</html>

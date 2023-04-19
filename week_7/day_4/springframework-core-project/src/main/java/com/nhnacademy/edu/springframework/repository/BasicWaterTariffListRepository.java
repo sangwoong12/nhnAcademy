@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class BasicWaterTariffListRepository implements WaterTariffListRepository {
 
     DataParser[] parsers;
+
     private List<WaterTariff> waterTariffList = new ArrayList<>();
 
     public BasicWaterTariffListRepository(DataParser... parser) {
