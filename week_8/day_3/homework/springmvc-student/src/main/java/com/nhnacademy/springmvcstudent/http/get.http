@@ -1,0 +1,3 @@
+### 학생 조회
+GET http://localhost:8080/api/students/Student-1
+Content-Type: application/json

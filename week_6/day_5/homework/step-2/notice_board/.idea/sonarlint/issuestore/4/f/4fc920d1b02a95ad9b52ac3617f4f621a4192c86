@@ -1,9 +1,0 @@
-
-`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112("FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-g	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‡úˆ¯ö0
-k
-java:S1192""NDefine a constant instead of duplicating this literal "visitorsCount" 3 times.(©ğ’Œ8 “¬¯ö0
-\	java:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
-Z
-java:S2147)"DCombine this catch with the one at line 39, which has the same body.(ï­£Ä

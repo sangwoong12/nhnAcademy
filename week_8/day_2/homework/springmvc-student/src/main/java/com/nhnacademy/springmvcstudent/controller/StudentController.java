@@ -36,7 +36,7 @@ public class StudentController {
 
     @GetMapping("/register.do")
     public String getRegisterForm(Model model) {
-        model.addAttribute("studentRequest", new StudentRequest());
+        model.addAttribute("student",new Student());
         return "student/register";
     }
 
@@ -68,7 +68,6 @@ public class StudentController {
     public String getUpdateForm(@PathVariable("id") String id, Model model) {
         Student student = studentRepository.getStudentById(id);
         model.addAttribute("student", student);
-        model.addAttribute("studentRequest", new StudentRequest(student.getId(), student.getName(), student.getGender(), student.getAge()));
         return "student/register";
     }
 

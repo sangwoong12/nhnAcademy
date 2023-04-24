@@ -1,0 +1,31 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/resources/style.css"/>
+<div th:fragment="userinfo">
+    <ul>
+        <li><span th:text="#{userId}"/> : <span th:text="${session.user.userId}"></span></li>
+        <li><span th:text="#{userName}"/> : <span th:text="${session.user.userName}"></span></li>
+        <li>
+            <button type="button" id="btn-logout" th:text="#{logout}"></button>
+        </li>
+
+        <li>
+            <button type="button" onclick="location.href=location.pathname + '?locale=ko' " th:text="#{ko}"></button>
+        </li>
+
+        <li>
+            <button type="button" onclick="location.href=location.pathname + '?locale=en' " th:text="#{en}"></button>
+        </li>
+    </ul>
+    <form method="post" id="logoutForm" action="/logout">
+    </form>
+
+    <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded", function () {
+            const btnLogout = document.getElementById("btn-logout");
+            btnLogout.addEventListener("click", function () {
+                const logoutForm = document.getElementById("logoutForm");
+                logoutForm.submit();
+            });
+        });
+    </script>
+</div>

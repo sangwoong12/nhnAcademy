@@ -1,6 +1,7 @@
 package com.nhnacademy.springmvcstudent;
 
 
+import com.nhnacademy.springmvcstudent.filter.LoginCheckFilter;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -14,11 +15,13 @@ public class FilterInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+        LoginCheckFilter loginCheckFilter = new LoginCheckFilter();
         encodingFilter.setEncoding("UTF-8");
         encodingFilter.setForceEncoding(true);
 
         registerFilter(servletContext, true, "encodingFilter", encodingFilter);
         registerFilter(servletContext, true, "httpMethodFilter", new HiddenHttpMethodFilter());
+        registerFilter(servletContext, true, "loginCheckFilter", loginCheckFilter);
     }
 
     private void registerFilter(ServletContext servletContext, boolean insertBeforeOtherFilters, String filterName, Filter filter) {

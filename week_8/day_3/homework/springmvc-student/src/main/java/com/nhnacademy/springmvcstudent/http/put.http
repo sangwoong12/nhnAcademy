@@ -1,0 +1,10 @@
+### 학생 수정
+PUT  http://localhost:8080/api/students/marco
+Content-Type: application/json
+
+{
+  "id": "marco",
+  "name": "sangwoong",
+  "gender": "M",
+  "age": 26
+}

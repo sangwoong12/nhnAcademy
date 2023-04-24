@@ -4,6 +4,7 @@ import com.nhnacademy.springmvcstudent.controller.ControllerBase;
 import com.nhnacademy.springmvcstudent.interceptor.LoginCheckInterceptor;
 import com.nhnacademy.springmvcstudent.thymeleaf.CustomTagDialet;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.MessageSource;
@@ -11,6 +12,7 @@ import org.springframework.context.MessageSourceAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -25,10 +27,13 @@ import java.util.Locale;
 
 @EnableWebMvc
 @Configuration
+@PropertySource("classpath:item.properties")
 @ComponentScan(basePackageClasses = ControllerBase.class)
 public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, MessageSourceAware {
     private ApplicationContext applicationContext;
     private MessageSource messageSource;
+
+
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -81,13 +86,13 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("//**").addResourceLocations("//");
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addRedirectViewController("/", "/student/list.do");
-        registry.addRedirectViewController("/favicon.ico", "//favicon.ico");
+        registry.addRedirectViewController("/favicon.ico", "/resources/favicon.ico");
     }
 
     @Bean

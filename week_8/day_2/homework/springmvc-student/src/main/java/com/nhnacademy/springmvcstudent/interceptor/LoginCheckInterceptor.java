@@ -1,7 +1,5 @@
 package com.nhnacademy.springmvcstudent.interceptor;
 
-import lombok.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,15 +10,10 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Component
 public class LoginCheckInterceptor implements HandlerInterceptor {
-    private final Set<String> excludeUrls = new HashSet<>(Arrays.asList(
-            "/login",
-            "/login/",
-            "/logout",
-            "/WEB-INF/views/login.html"
-    ));
 
+    private final Set<String> excludeUrls = new HashSet<>(Arrays.asList(
+            "/login","/login/","/logout","/WEB-INF/views/login.html"));
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

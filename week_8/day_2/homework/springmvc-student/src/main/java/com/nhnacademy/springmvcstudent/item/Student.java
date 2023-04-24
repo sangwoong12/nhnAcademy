@@ -16,7 +16,7 @@ public class Student {
         this.age = age;
         this.createAt = createAt;
     }
-
+    public Student(){}
     public String getId() {
         return id;
     }
