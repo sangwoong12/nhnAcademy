@@ -46,13 +46,10 @@ CREATE TABLE `image` (
 
 CREATE TABLE `blog` (
   `blog_id` integer PRIMARY KEY,
-  `owner_id` varchar(255),
-  `total_count` integer,
-  `today_count` integer,
-  `yesterday_count` integer
+  `owner_id` varchar(255)
 );
 
-ALTER TABLE `category` ADD FOREIGN KEY (`category_id`) REFERENCES `post` (`category_id`);
+ALTER TABLE `post` ADD FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 
 ALTER TABLE `comment` ADD FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`);
 
@@ -67,3 +64,5 @@ ALTER TABLE `profile` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 ALTER TABLE `post` ADD FOREIGN KEY (`board_id`) REFERENCES `blog` (`blog_id`);
 
 ALTER TABLE `blog` ADD FOREIGN KEY (`owner_id`) REFERENCES `user` (`user_id`);
+
+ALTER TABLE `comment` ADD FOREIGN KEY (`parent_id`) REFERENCES `comment` (`comment_id`);
