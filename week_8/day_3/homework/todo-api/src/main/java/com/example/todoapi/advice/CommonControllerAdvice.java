@@ -50,6 +50,6 @@ public class CommonControllerAdvice {
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<MethodErrorResponse> handleHttpRequestMethodNotSupportedException(Exception ex, HttpServletRequest req) {
-        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(new MethodErrorResponse(405, ex.getMessage(),req.getRequestURI()));
+        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(new MethodErrorResponse(405, ex.getMessage(), req.getRequestURI()));
     }
 }
