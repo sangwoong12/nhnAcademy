@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="mssql">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/adaptive" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/alwaysencrypted" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/azureactivedirectoryauthentication" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/connections" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/constrained" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/dataclassification" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/datatypes" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/resultsets" />
+      <root url="file://$USER_HOME$/Downloads/sqljdbc_12.2/kor/samples/sparse" />
+    </SOURCES>
+  </library>
+</component>
