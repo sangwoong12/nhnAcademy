@@ -7,9 +7,11 @@ import java.util.List;
 public class PassengerList {
     private static final List<Passenger> PASSENGER_LIST = new ArrayList<>();
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/module_05";
+    private static final String URL = "jdbc:mysql://localhost:3306/module06";
     private static final String USER = "root";
     private static final String PWD = "";
+
+    private static final String a = "server=localhost;database=module06;id=root;password="
 
     Connection connection = null;
     Statement statement = null;
@@ -20,7 +22,7 @@ public class PassengerList {
             Class.forName(DRIVER_NAME);
             connection = DriverManager.getConnection(URL, USER, PWD);
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("select * from Passenger");
+            resultSet = statement.executeQuery("select * from Passenger ");
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("PassengerNo");

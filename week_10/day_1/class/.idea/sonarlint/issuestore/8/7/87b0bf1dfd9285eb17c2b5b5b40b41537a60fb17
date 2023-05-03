@@ -1,0 +1,8 @@
+
+^
+java:S2095	"HUse try-with-resources or close this "Connection" in a "finally" clause.(‘”©
+b
+java:S2095
+"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ
+?
+java:S2115	")Add password protection to this database.(‘”©
