@@ -1,0 +1,31 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ĞÁøæıÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÎœßŸùÿÿÿÿ
+e
+java:S2095("OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(åÙÒ
+e
+java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(åÙÒ
+c
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(ûËŞ–ÿÿÿÿÿ
+e
+java:S20953"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(åÙÒ
+c
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(ûËŞ–ÿÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÎœßŸùÿÿÿÿ
+e
+java:S2095A"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(åÙÒ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ñ¸£Äÿÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(š¹µ¼ûÿÿÿÿ
+G
+java:S1172"2Remove this unused method parameter "commandType".(‰¼÷S
+H
+java:S11721"2Remove this unused method parameter "commandType".(‘Ñš
+M
+java:S1172F"2Remove this unused method parameter "commandType".(†ô±ıÿÿÿÿ
+<
+java:S1168q"&Return an empty array instead of null.(¥¹ï
