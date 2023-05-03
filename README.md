@@ -38,3 +38,9 @@
 - [spring core 프로젝트-0](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springcore-version-3)
 - [spring core 프로젝트-1](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springframework-project-final)
 - [spring core 프로젝트-2](https://github.com/sangwoong12/nhnAcademy/tree/main/week_7/day_4/springframework-core-project)
+
+## 8주차 정산과제 ( 게시판 만들기 )
+- spring mvc 에 대한 전반적인 내용을 수업시간에 다룸
+- 이를 활용하여 간단한 게시판 만들기
+- [spring 게시판 바로가기] (https://github.com/sangwoong12/nhnAcademy/tree/main/week_8/day_5/homework/notice_board)
+
