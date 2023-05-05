@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.todo.mapper.EventMapper" >
+
+    <insert id="save" parameterType="com.nhnacademy.todo.domain.Event">
+        INSERT INTO event SET
+                              user_id = #{userId},
+                              subject = #{subject},
+                              event_at = #{eventAt},
+                              created_at = #{createdAt}
+        <selectKey keyProperty="id" resultType="long">
+            SELECT last_insert_id()
+        </selectKey>
+    </insert>
+</mapper>
