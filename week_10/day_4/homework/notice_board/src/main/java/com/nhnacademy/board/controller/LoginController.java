@@ -1,8 +1,8 @@
-package com.nhnacademy.notice_board.controller;
+package com.nhnacademy.board.controller;
 
-import com.nhnacademy.notice_board.domain.LoginRequest;
-import com.nhnacademy.notice_board.item.user.User;
-import com.nhnacademy.notice_board.service.user.UserService;
+import com.nhnacademy.board.domain.LoginRequest;
+import com.nhnacademy.board.item.user.User;
+import com.nhnacademy.board.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +29,7 @@ public class LoginController {
 
     @ModelAttribute("user")
     public User getUser(@CookieValue(value = "SESSION", required = false) String id, HttpServletRequest req) {
-        if (Objects.nonNull(id) && Objects.nonNull(req.getSession().getAttribute("user"))) {
+        if (Objects.nonNull(id) && Objects.nonNull(req.getSession().getAttribute("name"))) {
             String userId = (String) req.getSession().getAttribute("id");
             return userService.getUser(userId);
         }
@@ -39,7 +39,10 @@ public class LoginController {
     @GetMapping
     public String loginForm(Model model, User user) {
         if (Objects.nonNull(user)) {
-            return "redirect:/login";
+            if (user.getId().equals("admin")) {
+                return "redirect:/admin";
+            }
+            return "redirect:/user";
         }
         model.addAttribute("loginRequest", new LoginRequest());
         return "login/loginForm";

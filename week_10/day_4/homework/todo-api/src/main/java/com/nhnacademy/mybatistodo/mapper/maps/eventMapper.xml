@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.mybatistodo.mapper.EventMapper">
+
+    <insert id="addEvent" parameterType="com.nhnacademy.mybatistodo.item.Event" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO event
+        SET user_id    = #{userId},
+            subject    = #{subject},
+            event_at   = #{eventAt},
+            created_at = #{createdAt}
+    </insert>
+
+    <select id="getEventById" resultType="com.nhnacademy.mybatistodo.item.Event">
+        SELECT *
+        FROM event
+        WHERE id = #{id}
+    </select>
+
+    <delete id="deleteEventById">
+        DELETE
+        FROM event
+        WHERE user_id = #{userId}
+          AND id = #{id}
+    </delete>
+
+    <delete id="deleteEventByEventAt">
+        DELETE
+        FROM event
+        WHERE user_id = #{userId}
+          AND event_at = #{eventAt}
+    </delete>
+
+    <select id="getCountOfEventAt" resultType="int">
+        SELECT COUNT(*)
+        FROM event
+        WHERE user_id = #{userId}
+          AND event_at = #{eventAt}
+    </select>
+
+    <select id="getEventListOfYearMonth" resultType="com.nhnacademy.mybatistodo.item.Event">
+        SELECT *
+        FROM event
+        WHERE user_id = #{userId}
+          AND YEAR(event_at) = YEAR(#{yearmonth})
+          AND MONTH(event_at) = MONTH(#{yearmonth})
+
+    </select>
+
+    <select id="getEventListByEventAt" resultType="com.nhnacademy.mybatistodo.item.Event">
+        SELECT *
+        FROM event
+        WHERE user_id = #{userId}
+          AND event_at = #{eventAt}
+    </select>
+</mapper>

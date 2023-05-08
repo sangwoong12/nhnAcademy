@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/resources/style.css"/>
+    <script type="text/javascript" src="/resources/script.js"></script>
+    <title th:text="#{post-list}"></title>
+</head>
+<body>
+<th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
+<div>
+    <table>
+        <caption th:text="#{post-list}"></caption>
+        <thead>
+        <tr>
+            <th id="title" th:text="#{title}"></th>
+            <th id="writerUserId" th:text="#{writerUserId}"></th>
+            <th id="viewCount" th:text="#{viewCount}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${pagedPosts.list}">
+            <td><a th:href="@{/user/view-post(postId=${post.id})}" th:text="${post.title}"></a></td>
+            <td th:text="${post.writerUserId}"></td>
+            <td th:text="${post.viewCount}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/user}" th:text="#{home}"></a>
+</div>
+<div>
+    | <a th:each="i : ${#numbers.sequence(1, pagedPosts.totalPageCount)}" th:href="@{/user/post-list(pageNum=${i})}"
+         th:text="${i} "></a> |
+</div>
+</body>
+</html>

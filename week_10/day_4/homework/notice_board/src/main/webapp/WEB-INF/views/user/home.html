@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/resources/style.css"/>
+    <script type="text/javascript" src="/resources/script.js"></script>
+    <title th:text="#{main}"></title>
+</head>
+<body>
+<th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
+<div>
+    <a th:href="@{/user/post-list}" th:text="#{post-list}"></a>
+    <a th:href="@{/user/add-post}" th:text="#{add-post}"></a>
+</div>
+</body>
+</html>

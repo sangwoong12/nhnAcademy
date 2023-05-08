@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="notice_board:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36262683-2f63-4b3a-b84e-58c43fa4df0d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/4/e/4e6d0bd527ad0f8e3bd4a1c33c9baa55f3373fc3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/6/3/6337a9e697ae9945a3482b796e8c15ed649902b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/6/4/6447a4b2901cd6fe776b172314db1a122d2de86a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/6/5/65a5d4dcbe257508b09adabe54acbf57418b762f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/a/4/a459b96696988a8f6bed90e40a4263bd13348df6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/a/e/aebd4739a40a5d1ad48abfc1f70c472020c6fa7d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/c/e/ce475d05bd26c61cb3fe8be2f39dbc4a98cc5ed5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/d/7/d7f58a7ca68f6ff67c4ce8343e8abe97d1d0a7e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/d/a/da0e210659eb754bb092947f2d0277097c17b0ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/e/1/e19e4b1d5b311fceee9497055fa8e7c0f475d432" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/src/main/java/com/nhnacademy/notice_board/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week_8/day_5/homework/notice_board/src/main/java/com/nhnacademy/notice_board/controller/LoginController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PMPiPvwhuRkMxdfyOa1zVCPW98" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/sangwoong/Documents/nhnAcademy/week_10/day_4/homewok/notice_board/src/main/resources/image",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "121cfc1015764f2a7d263ae2fca35bd8",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/image" />
+      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/image" />
+      <recent name="$PROJECT_DIR$/src/main/resources/1.ㅔㅜㅎ" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/nhnacademy/board/mapper/user/maps" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/nhnacademy/board/mapper/post/maps" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/nhnacademy/board/mapper/user" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nhnacademy.board.controller" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.nhnacademy.board.controller" />
+      <recent name="com.nhnacademy.board.service.user" />
+      <recent name="com.nhnacademy.board.service.post" />
+      <recent name="com.nhnacademy.board.mapper.post" />
+      <recent name="com.nhnacademy.board.mapper.user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.nhnacademy.notice_board.config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.73">
+    <configuration name="All in notice_board" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="notice_board" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostMapperTest.getPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="notice_board" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhnacademy.board.mapper.post.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhnacademy.board.mapper.post" />
+      <option name="MAIN_CLASS_NAME" value="com.nhnacademy.board.mapper.post.PostMapperTest" />
+      <option name="METHOD_NAME" value="getPost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplicationContextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="notice_board" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhnacademy.board.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhnacademy.board.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.nhnacademy.board.controller.WebApplicationContextTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplicationContextTest.getPostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="notice_board" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhnacademy.board.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhnacademy.board.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.nhnacademy.board.controller.WebApplicationContextTest" />
+      <option name="METHOD_NAME" value="getPostTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.nhnacademy.board in notice_board" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="notice_board" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhnacademy.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhnacademy.board" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.73" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.73" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="notice_board:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="8e67b017-5f94-45d7-9688-ede24feff728" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59305" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="notice_board:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.All in notice_board" />
+      <item itemvalue="JUnit.PostMapperTest.getPost" />
+      <item itemvalue="JUnit.com.nhnacademy.board in notice_board" />
+      <item itemvalue="JUnit.WebApplicationContextTest.getPostTest" />
+      <item itemvalue="JUnit.WebApplicationContextTest" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.73" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PostMapperTest.getPost" />
+        <item itemvalue="JUnit.com.nhnacademy.board in notice_board" />
+        <item itemvalue="JUnit.All in notice_board" />
+        <item itemvalue="JUnit.WebApplicationContextTest.getPostTest" />
+        <item itemvalue="JUnit.WebApplicationContextTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36262683-2f63-4b3a-b84e-58c43fa4df0d" name="Changes" comment="" />
+      <created>1683264103495</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683264103495</updated>
+      <workItem from="1683264104708" duration="36457000" />
+      <workItem from="1683387636374" duration="34676000" />
+      <workItem from="1683456298096" duration="17375000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhnacademy/board/repository/post/DbPostRepository.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/nhnacademy/board/mapper/post/PostMapperTest.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest.ic" NAME="WebApplicationContextTest Coverage Results" MODIFIED="1683421887626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest_editProfileTest.ic" NAME="WebApplicationContextTest.editProfileTest Coverage Results" MODIFIED="1683422016673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest_addProfileTest2.ic" NAME="WebApplicationContextTest.addProfileTest2 Coverage Results" MODIFIED="1683421707853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+  </component>
+</project>
