@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="/resources/script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{loginForm}"></title>
+</head>
+<body>
+<div class="login-container">
+    <ul><span th:text="#{logging.time}"/> : <span th:text="${time}"></span></ul>
+    <form method="post" action="/login" th:object="${loginRequest}">
+        <p><input type="text" th:field="*{userId}" th:placeholder="#{id}"/>
+            <span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" class="error-message"></span>
+        </p>
+        <p><input type="password" th:field="*{userPassword}" th:placeholder="#{password}"/>
+            <span th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}" class="error-message"></span>
+        </p>
+        <p th:if="${message}">
+            <span class="error-message" th:text="${message}"></span>
+        </p>
+        <p>
+            <button type="submit" th:text="#{login}"></button>
+        </p>
+    </form>
+</div>
+</body>
+</html>

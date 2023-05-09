@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/resources/style.css"/>
+<script type="text/javascript" src="/resources/script.js"></script>
+<div th:fragment="userinfo">
+    <ul>
+        <li><span th:text="#{id}"/> : <span th:text="${session.id}"></span></li>
+        <li><span th:text="#{name}"/> : <span th:text="${session.name}"></span></li>
+        <li><span th:text="#{logging.time}"/> : <span th:text="${session.time}"></span></li>
+        <li><span th:text="#{login-count}"/> : <span th:text="${session.counter}"></span></li>
+        </br>
+        <li>
+            <form method="post" id="logoutForm" action="/logout">
+                <button type="submit" th:text="#{logout}"/>
+            </form>
+        </li>
+        <li>
+            <button type="button"
+                    onclick="location.href= updateQueryStringParameter(window.location.href, 'locale', 'ko')"
+                    th:text="#{ko}"></button>
+        </li>
+
+        <li>
+            <button type="button"
+                    onclick="location.href= updateQueryStringParameter(window.location.href, 'locale', 'en')"
+                    th:text="#{en}"></button>
+        </li>
+    </ul>
+</div>

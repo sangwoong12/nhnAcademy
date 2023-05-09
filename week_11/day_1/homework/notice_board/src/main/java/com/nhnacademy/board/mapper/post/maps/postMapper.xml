@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.board.mapper.post.PostMapper">
+
+    <insert id="register" parameterType="com.nhnacademy.board.item.post.PostImpl" >
+        INSERT INTO Post
+        SET title = #{title},
+            content = #{content},
+            writer_user_id = (SELECT user_id FROM User WHERE id = #{writerUserId}),
+            write_time = #{writeTime},
+            view_count = #{viewCount}
+        <selectKey keyProperty="id" resultType="Long" order="AFTER">
+            SELECT LAST_INSERT_ID() as 'id'
+        </selectKey>
+    </insert>
+
+    <update id="modify" parameterType="com.nhnacademy.board.item.post.Post">
+        UPDATE Post
+        SET title   = #{title},
+            content = #{content},
+            view_count = #{viewCount}
+        WHERE Post.id = #{id}
+    </update>
+
+    <delete id="remove">
+        DELETE
+        FROM Post
+        WHERE id = #{id}
+    </delete>
+    <select id="getPost" resultType="com.nhnacademy.board.item.post.PostImpl">
+        SELECT Post.id, title, content, U.id as 'writerUserId', DATE_FORMAT(write_time, '%Y-%m-%d %H:%i:%s') as 'writeTime', view_count as 'viewCount'
+        FROM Post
+                 INNER JOIN User U on Post.writer_user_id = U.user_id
+        WHERE Post.id = #{id}
+    </select>
+
+    <select id="getPosts" resultType="com.nhnacademy.board.item.post.PostImpl">
+        SELECT Post.id, title, content, U.id as 'writerUserId',DATE_FORMAT(write_time, '%Y-%m-%d %H:%i:%s') as 'writeTime', view_count as 'viewCount'
+        FROM Post
+                 INNER JOIN User U on Post.writer_user_id = U.user_id
+        ORDER BY write_time;
+    </select>
+
+    <select id="existById" parameterType="long" resultType="java.lang.Boolean">
+        SELECT COUNT(*) > 0
+        FROM Post
+        WHERE id = #{id};
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT COUNT(*)
+        FROM Post;
+    </select>
+
+    <select id="getPagedPosts" parameterType="int" resultType="com.nhnacademy.board.item.post.PostImpl">
+        SELECT Post.id, title, content, U.id as 'writerUserId', DATE_FORMAT(write_time, '%Y-%m-%d %H:%i:%s') as 'writeTime', view_count
+        FROM Post
+                 INNER JOIN User U on Post.writer_user_id = U.user_id
+        limit #{param1} OFFSET #{param2}
+    </select>
+</mapper>

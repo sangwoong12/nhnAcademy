@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.board.mapper.user.UserMapper">
+
+    <select id="getUser" parameterType="string" resultType="com.nhnacademy.board.item.user.UserImpl">
+        SELECT id, password, name, profile_file_name as 'profileFileName'
+        FROM User
+        WHERE id = #{id}
+    </select>
+
+    <delete id="remove" parameterType="string">
+        DELETE
+        FROM User
+        WHERE id = #{id}
+    </delete>
+
+    <insert id="add" parameterType="com.nhnacademy.board.item.user.User">
+        INSERT INTO User (id, password, name, profile_file_name) VALUE (#{id}, #{password}, #{name}, #{profileFileName})
+    </insert>
+
+    <update id="modify" parameterType="com.nhnacademy.board.item.user.User">
+        UPDATE User
+        SET
+            password          = #{password},
+            name              = #{name},
+            profile_file_name = #{profileFileName}
+        WHERE id = #{id}
+    </update>
+
+    <select id="existById" parameterType="string" resultType="java.lang.Boolean">
+        SELECT COUNT(*) > 0
+        FROM User
+        WHERE id = #{id};
+    </select>
+
+    <select id="getUsers" resultType="com.nhnacademy.board.item.user.UserImpl">
+        SELECT id, password, name, profile_file_name
+        FROM User;
+    </select>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT COUNT(*)
+        FROM User;
+    </select>
+
+    <select id="getPagedUsers" parameterType="int" resultType="com.nhnacademy.board.item.user.UserImpl">
+        select *
+        from User
+        limit #{param1} OFFSET #{param2}
+    </select>
+</mapper>
