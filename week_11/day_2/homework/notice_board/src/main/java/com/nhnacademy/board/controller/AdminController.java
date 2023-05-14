@@ -5,10 +5,12 @@ import com.nhnacademy.board.entity.User;
 import com.nhnacademy.board.service.user.JpaUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Controller
@@ -28,12 +30,8 @@ public class AdminController {
     }
 
     @GetMapping("/user-list")
-    public String getUserListByPageNum(@RequestParam(value = "pageNum", required = false) String pageNum, Model model) {
-        int pageNumber = 1;
-        if (Objects.nonNull(pageNum)) {
-            pageNumber = Integer.parseInt(pageNum);
-        }
-        Page<User> pagedUsers = userService.getPagedUsers(pageNumber, 10);
+    public String getUserListByPageNum(Pageable pageable, Model model) {
+        Page<User> pagedUsers = userService.getPagedUsers(pageable);
         model.addAttribute("pagedUsers", pagedUsers);
         return "admin/user-list";
     }

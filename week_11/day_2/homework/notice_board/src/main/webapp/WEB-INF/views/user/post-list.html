@@ -29,7 +29,7 @@
     <a th:href="@{/user}" th:text="#{home}"></a>
 </div>
 <div>
-    | <a th:each="i : ${#numbers.sequence(1, pagedPosts.totalPageCount)}" th:href="@{/user/post-list(pageNum=${i})}"
+    | <a th:each="i : ${#numbers.sequence(1, pagedPosts.totalPageCount)}" th:href="@{/user/post-list(pageNum=${i}, size=10)}"
          th:text="${i} "></a> |
 </div>
 </body>

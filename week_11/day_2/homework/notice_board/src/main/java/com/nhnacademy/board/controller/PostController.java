@@ -8,6 +8,7 @@ import com.nhnacademy.board.exception.PermissionException;
 import com.nhnacademy.board.service.post.JpaPostService;
 import com.nhnacademy.board.service.user.JpaUserService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,12 +36,12 @@ public class PostController {
     }
 
     @GetMapping("/post-list")
-    public String getPostListByPageNum(@RequestParam(value = "pageNum", required = false) String pageNum, Model model) {
+    public String getPostListByPageNum(Pageable pageable, Model model) {
         int pageNumber = 1;
-        if (Objects.nonNull(pageNum)) {
-            pageNumber = Integer.parseInt(pageNum);
-        }
-        Page<Post> pagedPosts = postService.getPagedPosts(pageNumber, 10);
+//        if (Objects.nonNull(pageNum)) {
+//            pageNumber = Integer.parseInt(pageNum);
+//        }
+        Page<Post> pagedPosts = postService.getPagedPosts(pageable);
         model.addAttribute("pagedPosts", pagedPosts);
         return "user/post-list";
     }

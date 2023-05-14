@@ -18,7 +18,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="user : ${pagedUsers.list}">
+        <tr th:each="user : ${pagedUsers.getContent()}">
             <td><a th:href="@{/admin/view-user/{userId}(userId=${user.id})}" th:text="${user.id}"></a></td>
             <td th:text="${user.name}"></td>
         </tr>
@@ -27,7 +27,7 @@
     <a th:href="@{/admin}" th:text="#{home}"></a>
 </div>
 <div>
-    | <a th:each="i : ${#numbers.sequence(1, pagedUsers.totalPageCount)}" th:href="@{/admin/user-list(pageNum=${i})}"
+    | <a th:each="i : ${#numbers.sequence(1, pagedUsers.getTotalPages())}" th:href="@{/admin/user-list(pageNum=${i}, size=10))}"
          th:text="${i} "></a> |
 </div>
 </body>

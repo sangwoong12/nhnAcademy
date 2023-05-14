@@ -4,6 +4,7 @@ import com.nhnacademy.board.entity.Post;
 import com.nhnacademy.board.repository.JpaPostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,8 +30,8 @@ public class JpaPostService {
         postRepository.save(post);
     }
 
-    public Page<Post> getPagedPosts(int page, int size) {
-        return null;
+    public Page<Post> getPagedPosts(Pageable pageable) {
+        return postRepository.findAll(pageable);
     }
 
     public void increaseCount(Post post) {

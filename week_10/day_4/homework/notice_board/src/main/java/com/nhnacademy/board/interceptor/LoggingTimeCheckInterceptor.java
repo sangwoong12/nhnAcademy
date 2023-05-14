@@ -23,7 +23,7 @@ public class LoggingTimeCheckInterceptor implements HandlerInterceptor {
         threadLocal.remove();
 
         if (modelAndView != null && response.getStatus() != 302 && response.getStatus() != 301) {
-            //TODO redirect 의 경우 총 2번의 요청이 있는데 시간을 총 합쳐서 넘겨주는 방법을 찾고 문제해결.
+            // TODO redirect 의 경우 총 2번의 요청이 있는데 시간을 총 합쳐서 넘겨주는 방법을 찾고 문제해결.
             request.getSession().setAttribute("time",result);
         }
     }

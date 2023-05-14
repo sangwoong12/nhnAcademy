@@ -8,6 +8,7 @@ import com.nhnacademy.board.repository.JpaUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -57,7 +58,7 @@ public class JpaUserService {
         return user.getId().equals(request.getUserId()) && user.getPassword().equals(request.getUserPassword());
     }
 
-    public Page<User> getPagedUsers(int page, int size) {
-        return null;
+    public Page<User> getPagedUsers(Pageable pageable) {
+        return userRepository.findAll(pageable);
     }
 }

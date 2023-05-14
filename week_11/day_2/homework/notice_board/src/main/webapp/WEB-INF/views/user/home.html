@@ -9,7 +9,7 @@
 <body>
 <th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
 <div>
-    <a th:href="@{/user/post-list}" th:text="#{post-list}"></a>
+    <a th:href="@{/user/post-list(size=10)}" th:text="#{post-list}"></a>
     <a th:href="@{/user/add-post}" th:text="#{add-post}"></a>
 </div>
 </body>
