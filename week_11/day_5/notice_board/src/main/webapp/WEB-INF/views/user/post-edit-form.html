@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{post}"></title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+    <script type="text/javascript" src="/resources/script.js"></script>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<th:block th:insert="~{login/loginInfo :: userinfo}"></th:block>
+<div>
+    <form method="post" action="/user/edit-post" th:object="${editPostDto}">
+        <table>
+            <caption th:text="#{add-post}"></caption>
+            <tbody>
+            <tr>
+                <th id="title" th:text="#{title}"></th>
+                <td>
+                    <input type="text" th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <th id="content" th:text="#{content}"></th>
+                <td>
+                    <textarea rows="4" cols="50" th:field="*{content}">
+                    </textarea>
+                </td>
+            </tr>
+            </tbody>
+            <input type="hidden" th:field="*{id}"/>
+        </table>
+        <p>
+            <button type="submit" th:text="#{edit}"></button>
+        </p>
+    </form>
+</div>
+</body>
+</html>
