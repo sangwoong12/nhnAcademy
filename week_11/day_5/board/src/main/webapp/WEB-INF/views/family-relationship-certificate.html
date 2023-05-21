@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가족관계증명서</title>
+</head>
+<body>
+<table border="1" style="width: 600px">
+    <tr>
+        <th colspan="6">가족관계증명서</br>
+            (발급일 : <span style="color:blue" th:text="${certificateIssue.getCertificateIssueDate()}" />
+            ,증명서확인번호 : <span style="color:blue" th:text="${certificateIssue.getCertificateConfirmationNumber()}" />)
+        </th>
+    </tr>
+    <tr>
+        <th colspan="2">등록기준지</br>(본적)</th>
+        <th colspan="3" style="width:250px;color:blue" th:text="${certificateIssue.getResident().getRegistrationBaseAddress()}"></th>
+    </tr>
+    <tr>
+        <th>구분</th>
+        <th>성명</th>
+        <th>출생연월일</th>
+        <th>주민등록번호</th>
+        <th>성별</th>
+    </tr>
+    <tr>
+        <th style="color:blue">본인</th>
+        <th style="color:blue" th:text="${certificateIssue.getResident().getName()}"></th>
+        <th style="color:blue" th:text="${certificateIssue.getResident().getBirthDate()}"></th>
+        <th style="color:blue" th:text="${certificateIssue.getResident().getResidentRegistrationNumber()}"></th>
+        <th style="color:blue" th:text="${certificateIssue.getResident().getGender().getCode()}"></th>
+    </tr>
+    <tr th:each="resident : ${certificateIssue.getResident().getFamilyRelationships()}">
+        <th style="color:blue" th:text="${resident.getFamilyRelationshipCode()}"></th>
+        <th style="color:blue" th:text="${resident.getFamilyResident().getName()}"></th>
+        <th style="color:blue" th:text="${resident.getFamilyResident().getBirthDate()}"></th>
+        <th style="color:blue" th:text="${resident.getFamilyResident().getResidentRegistrationNumber()}"></th>
+        <th style="color:blue" th:text="${resident.getFamilyResident().getGender().getCode()}"></th>
+    </tr>
+</table>
+<a th:href="@{/residents}" th:text="홈으로"/>
+
+</body>
+</html>

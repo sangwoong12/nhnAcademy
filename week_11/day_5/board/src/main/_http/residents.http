@@ -1,0 +1,31 @@
+### 주민 등록
+POST localhost:8080/residents
+Content-Type: application/json
+
+{
+  "name": "홍길동",
+  "residentRegistrationNumber": "123456-1234567",
+  "genderCode": "남",
+  "birthDate": "1990-05-14T17:30:00",
+  "birthPlaceCode": "병원",
+  "registrationBaseAddress": "서울특별시 강남구",
+  "deathDate": null,
+  "deathPlaceCode": null,
+  "deathPlaceAddress": null
+}
+
+### 주민 수정
+PUT localhost:8080/residents/8
+Content-Type: application/json
+
+{
+  "name": "윤석열",
+  "residentRegistrationNumber": "123456-1234567",
+  "genderCode": "남",
+  "birthDate": "1990-05-14T17:30:00",
+  "birthPlaceCode": "병원",
+  "registrationBaseAddress": "서울특별시 강남구",
+  "deathDate": null,
+  "deathPlaceCode": null,
+  "deathPlaceAddress": null
+}

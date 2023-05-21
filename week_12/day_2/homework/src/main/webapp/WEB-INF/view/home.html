@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <title>HOME</title>
+</head>
+<body>
+<p>HOME</p></br>
+<form method="post" action="/login">
+  <span sec:authentication="name" />,&nbsp;
+  <a th:text="#{login.success}"></a></br>
+  <a href="/logout">logout</a>
+  <input type="submit" />
+</form>
+<ul>
+  <li sec:authorize="hasAuthority('ROLE_ADMIN')">
+    <p>ADMIN USER</p>
+  </li>
+  <li sec:authorize="hasAuthority('ROLE_MEMBER')">
+    <p>MEMBER USER</p>
+  </li>
+</ul>
+</body>
+</html>

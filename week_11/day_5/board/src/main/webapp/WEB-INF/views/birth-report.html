@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출생신고서</title>
+</head>
+<body>
+<table border="1" style="width: 500px; height: 400px">
+  <tr>
+    <th colspan="6">출생신고서</br>
+      (신고일 : <span style="color:blue" th:text="${birthReport.getBirthDeathReportDate()}" />)
+    </th>
+  </tr>
+  <tr>
+    <th style="width: 20px" rowspan="4">출생자</th>
+    <th colspan="2">성명</th>
+    <th style="width: 190px; color:blue" th:text="${birthReport.getResident().getName()}"></th>
+    <th style="width: 90px">성별</th>
+    <th style="width: 140px; color:blue" th:text="${birthReport.getResident().getGender().getCode()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">출생일시</th>
+    <th colspan="3" style="color:blue" th:text="${birthReport.getResident().getBirthDate}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">출생장소</th>
+    <th colspan="3" style="color:blue" th:text="${birthReport.getResident().getBirthPlaceCode()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">등록기준지(본적)</th>
+    <th colspan="3" style="color:blue" th:text="${birthReport.getResident().getRegistrationBaseAddress()}"></th>
+  </tr>
+  <tr>
+    <th rowspan="2">부모</th>
+    <th>부</th>
+    <th>성명</th>
+    <th style="color:blue" th:text="${father.getName()}"></th>
+    <th style="width: 50px;">주민등록번호</th>
+    <th style="color:blue" th:text="${father.getResidentRegistrationNumber()}"></th>
+  </tr>
+  <tr>
+    <th>모</th>
+    <th>성명</th>
+    <th style="color:blue" th:text="${mother.getName()}"></th>
+    <th style="width: 50px;">주민등록번호</th>
+    <th style="color:blue" th:text="${mother.getResidentRegistrationNumber()}"></th>
+  </tr>
+  <tr>
+    <th rowspan="3">신고인</th>
+    <th colspan="2">성명</th>
+    <th style="color:blue" th:text="${birthReport.getReportResident().getName()}" ></th>
+    <th style="width: 50px;">주민등록번호</th>
+    <th style="color:blue" th:text="${birthReport.getReportResident().getResidentRegistrationNumber()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">자격</th>
+    <th style="color:blue" colspan="3" th:text="${birthReport.getBirthReportQualificationsCode()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">이메일</th>
+    <th style="color:blue" th:text="${birthReport.getEmailAddress()}"></th>
+    <th>전화번호</th>
+    <th style="color:blue" th:text="${birthReport.getPhoneNumber()}"></th>
+  </tr>
+</table>
+<a th:href="@{/residents}" th:text="홈으로"/>
+</body>
+</html>

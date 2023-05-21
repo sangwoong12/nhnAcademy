@@ -1,0 +1,24 @@
+### 세대 전입 주소 등록
+POST /household/1/movement
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "houseMovementReportDate": "2023-02-04",
+  "householdMovementAddress": "왕대왕판교로 645",
+  "lastAddress" : "Y"
+}
+
+### 세대 전입 주소 수정
+PUT /household/1/movement/20230204
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "householdMovementAddress": "경기도 성남시 분당구 삼평동 629",
+  "lastAddress" : "Y"
+}
+
+### 세대 전입 주소 삭제
+DELETE /household/1/movement/20230204
+Host: localhost:8080

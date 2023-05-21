@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>사망신고서</title>
+</head>
+<body>
+<table border="1" style="width: 500px; height: 400px">
+  <tr>
+    <th colspan="6">사망신고서</br>
+      (신고일 : <span style="color:blue" th:text="${deathReport.getBirthDeathReportDate()}" />)
+    </th>
+  </tr>
+  <tr>
+    <th style="width: 20px" rowspan="4">사망자</th>
+    <th colspan="2">성명</th>
+    <th style="width: 190px;color:blue" th:text="${deathReport.getResident().getName()}"></th>
+    <th style="width: 90px">주민등록번호</th>
+    <th style="width: 140px; color:blue" th:text="${deathReport.getResident().getResidentRegistrationNumber()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">사망일시</th>
+    <th style="color:blue" colspan="3" th:text="${deathReport.getResident().getDeathDate()}"></th>
+  </tr>
+  <tr>
+    <th colspan="1" rowspan="2">사망장소</th>
+    <th style="width: 30px">구분</th>
+    <th style="color:blue" colspan="3" th:text="${deathReport.getResident().getDeathPlaceCode()}"></th>
+  </tr>
+  <tr>
+    <th>주소</th>
+    <th style="color:blue" colspan="3" th:text="${deathReport.getResident().getDeathPlaceAddress()}"></th>
+  </tr>
+  <tr>
+    <th rowspan="3">신고인</th>
+    <th colspan="2">성명</th>
+    <th style="color:blue" th:text="${deathReport.getReportResident().getName()}"></th>
+    <th style="width: 50px;">주민등록번호</th>
+    <th style="color:blue" th:text="${deathReport.getReportResident().getResidentRegistrationNumber()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">자격</th>
+    <th style="color:blue" colspan="3" th:text="${deathReport.getDeathReportQualificationsCode()}"></th>
+  </tr>
+  <tr>
+    <th colspan="2">이메일</th>
+    <th style="color:blue" th:text="${deathReport.getEmailAddress()}"></th>
+    <th>전화번호</th>
+    <th style="color:blue" th:text="${deathReport.getPhoneNumber()}"></th>
+  </tr>
+</table>
+<a th:href="@{/residents}" th:text="홈으로"/>
+
+</body>
+</html>

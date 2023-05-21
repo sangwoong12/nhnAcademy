@@ -75,8 +75,6 @@ a
 1src/main/webapp/WEB-INF/views/user/post-list.html,b/c/bcfb09c045ee6040b9a5ce4b21d67488edb0d912
 q
 Asrc/main/java/com/nhnacademy/board/controller/PostController.java,0/9/092b8d827f68556b12172388f83eb457d44b0d2a
-g
-7src/test/java/com/nhnacademy/board/entity/PostTest.java,f/b/fbf18a7cdb820ae3f1405a23ed8086e368b1e22e
 b
 2src/main/webapp/WEB-INF/views/admin/user-list.html,e/4/e46c6b376b104f707b1e9cf4d263fafe0a25bfce
 ]
@@ -85,3 +83,7 @@ b
 ,src/main/webapp/WEB-INF/views/user/home.html,7/2/72f1448db53ff8f7c5fbe65b837cc81a1148ae50
 r
 Bsrc/main/java/com/nhnacademy/board/controller/AdminController.java,7/3/731e8a8d13670d0723fcf2443e57cb070384d3d6
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+g
+7src/test/java/com/nhnacademy/board/entity/PostTest.java,f/b/fbf18a7cdb820ae3f1405a23ed8086e368b1e22e

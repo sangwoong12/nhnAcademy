@@ -43,8 +43,6 @@ c
 3src/main/java/com/nhnacademy/board/entity/Post.java,2/7/27a0e2dd7c867ce63504650dcd578eaf523389f2
 j
 :src/main/java/com/nhnacademy/board/item/post/PostImpl.java,1/3/13cd1b0b4be0b58c24b4ba5bce6216c2f79ac9ee
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 n
 >src/main/java/com/nhnacademy/board/mapper/user/UserMapper.java,f/a/fa444797bb435e439bba5402f672fbdfdfb9ccb4
 n
@@ -65,8 +63,6 @@ t
 Dsrc/main/java/com/nhnacademy/board/controller/ProfileController.java,1/8/18179342c749f06d4b4c8653fb3acf3e8f39bb78
 e
 5src/main/java/com/nhnacademy/board/item/PageImpl.java,9/1/91e334ef8fcf4058605f711c56d32d823f0ac02a
-x
-Hsrc/test/java/com/nhnacademy/board/service/post/ImplPostServiceTest.java,6/2/62019eec1370fcb3d2d903504c522374bcf9b2f1
 
 Osrc/main/java/com/nhnacademy/board/interceptor/LoggingTimeCheckInterceptor.java,f/5/f5f902b747698547112deee749671f4dc91738d8
 n
@@ -105,3 +101,7 @@ r
 Bsrc/main/java/com/nhnacademy/board/controller/AdminController.java,7/3/731e8a8d13670d0723fcf2443e57cb070384d3d6
 r
 Bsrc/main/java/com/nhnacademy/board/controller/LoginController.java,1/e/1e6b003d27ddca72ec38a718f4639408ecf0f855
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+x
+Hsrc/test/java/com/nhnacademy/board/service/post/ImplPostServiceTest.java,6/2/62019eec1370fcb3d2d903504c522374bcf9b2f1

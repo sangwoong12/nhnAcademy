@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ADMIN</title>
+</head>
+<body>
+<p>ADMIN</p></br>
+<form method="post" action="/login">
+    <a th:text="#{login.success}"></a></br>
+    <a href="/logout">logout</a>
+    <input type="submit"/>
+</form>
+어드민만 접근가능한 관리 페이지 입니다.</br>
+<a href="/home">go home</a>
+</body>
+</html>

@@ -11,8 +11,6 @@ d
 4src/main/java/com/nhnacademy/flight/item/Member.java,4/4/441d03a49bc260b1d62a5612448f7fa8b9b2e926
 J
 src/main/webapp/member.jsp,0/1/0148bb037d7cac466173fb913a83caee77047c28
-`
-0src/main/java/com/nhnacademy/flight/DbUtils.java,2/b/2b12119ecbc63de186a3737e28753e4877a2252d
 L
 src/main/webapp/boarding.jsp,5/a/5a7161ab491e95f5e99ef05d09584bd917fb37ca
 f
@@ -21,3 +19,5 @@ I
 src/main/webapp/index.jsp,8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded
 n
 >src/main/java/com/nhnacademy/flight/servlet/FlightServlet.java,a/2/a2ceaf91846d7f95a7b2832ad7e582014ecbf227
+`
+0src/main/java/com/nhnacademy/flight/DbUtils.java,2/b/2b12119ecbc63de186a3737e28753e4877a2252d

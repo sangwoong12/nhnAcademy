@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>주민 목록</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>종류</th>
+    <th>링크</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="certificateIssue : ${certificateIssueList}" th:if="${certificateIssueList.size != 0}">
+    <th th:text="${certificateIssue.getCertificateTypeCode()}"></th>
+    <th>
+      <a th:if="${certificateIssue.getCertificateTypeCode == '주민등록등본'}"
+         th:href="@{/certificate-issue/resident-registration-certificate(certificateConfirmationNumber=${certificateIssue.getCertificateConfirmationNumber()})}"
+         th:text="바로가기"></a>
+      <a th:if="${certificateIssue.getCertificateTypeCode == '가족관계증명서'}"
+         th:href="@{/certificate-issue/family-relationship-certificate(certificateConfirmationNumber=${certificateIssue.getCertificateConfirmationNumber()})}"
+         th:text="바로가기"></a>
+    </th>
+  </tr>
+  </tbody>
+</table>
+<a th:href="@{/residents}" th:text="홈으로"/>
+
+</body>
+</html>

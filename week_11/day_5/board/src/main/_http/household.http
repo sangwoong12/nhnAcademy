@@ -1,0 +1,15 @@
+### 세대 등록
+POST /household
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "householdResidentSerialNumber": "8",
+  "householdCompositionDate": "2023-05-18",
+  "householdCompositionReasonCode": "세대분리",
+  "currentHouseMovementAddress": "대왕판교로 645번길"
+}
+
+### 세대 삭제
+DELETE /household/4
+Host: localhost:8080

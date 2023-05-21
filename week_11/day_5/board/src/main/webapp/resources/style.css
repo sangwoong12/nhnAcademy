@@ -1,0 +1,59 @@
+div {
+    padding-top: 20px;
+    border-style: groove;
+    text-align: center;
+    padding-bottom: 20px;
+}
+a {
+    border-style: ridge;
+    font-size : 15px;
+}
+table {
+    width: 500px;
+    border-collapse: collapse;
+    border:1px #ccc solid;
+}
+table tr>td,th{
+    padding:5px;
+    border:1px #ccc solid;
+}
+
+ul{
+    list-style: none;
+}
+
+ul :after{
+    clear: both;
+}
+
+ul > li {
+    float: left;
+    margin-right:10px;
+}
+div{
+    border-style: groove;
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+table{
+    border-style: groove;
+    text-align: center;
+    margin: auto;
+}
+th.title{
+    width: 100px;
+}
+th.user{
+    width: 50px;
+}
+th.view-count{
+    width: 50px;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+.hidden {
+    display: none;
+}
