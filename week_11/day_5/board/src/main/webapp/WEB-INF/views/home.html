@@ -23,7 +23,7 @@
         <td><a th:href="@{/residents/{serialNumber}(serialNumber=${resident.getResidentSerialNumber()})}"
                th:text="${resident.getResidentSerialNumber()}"></a></td>
         <td th:text="${resident.getName()}"></td>
-        <td th:text="${resident.getGender()}"></td>
+        <td th:text="${resident.getGender().getCode()}"></td>
         <td th:text="${resident.getResidentRegistrationNumber()}"></td>
         <td><a th:href="@{/residents/{serialNumber}/delete(serialNumber=${resident.getResidentSerialNumber()})}"
                th:text="삭제"></a></td>

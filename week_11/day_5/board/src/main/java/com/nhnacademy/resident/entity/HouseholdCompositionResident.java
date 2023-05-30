@@ -20,13 +20,16 @@ public class HouseholdCompositionResident {
     @JoinColumn(name = "household_serial_number")
     private Household household;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @MapsId("residentSerialNumber")
     @JoinColumn(name = "resident_serial_number")
     private Resident resident;
 
+    @Column(name = "report_date")
     private LocalDate reportDate;
+    @Column(name = "household_relationship_code")
     private String householdRelationshipCode;
+    @Column(name = "household_composition_change_reason_code")
     private String householdCompositionChangeReasonCode;
 
     @Embeddable

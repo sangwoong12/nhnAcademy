@@ -34,7 +34,7 @@ class ResidentServiceImplTest {
         RegisterResidentDto residentDto = new RegisterResidentDto();
         residentDto.setName("홍길동");
         residentDto.setResidentRegistrationNumber("123456-1234567");
-        residentDto.setGenderCode(Resident.Gender.남);
+        residentDto.setGenderCode(Resident.Gender.M);
         residentDto.setBirthDate(LocalDateTime.of(2000,10,10,10,10,10));
         residentDto.setBirthPlaceCode("서울");
         residentDto.setRegistrationBaseAddress("서울특별시 강남구");

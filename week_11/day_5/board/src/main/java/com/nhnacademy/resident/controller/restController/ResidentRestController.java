@@ -2,17 +2,11 @@ package com.nhnacademy.resident.controller.restController;
 
 import com.nhnacademy.resident.domain.resident.RegisterResidentDto;
 import com.nhnacademy.resident.domain.resident.ResidentDto;
-import com.nhnacademy.resident.domain.resident.ResidentPageDto;
-import com.nhnacademy.resident.entity.BirthDeathReportResident;
 import com.nhnacademy.resident.service.resident.ResidentService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/residents")
@@ -24,12 +18,12 @@ public class ResidentRestController {
     }
 
     @PostMapping
-    public ResponseEntity<ResidentDto> register(@RequestBody RegisterResidentDto residentDto) {
+    public ResponseEntity<ResidentDto> register(@RequestBody @Valid RegisterResidentDto residentDto) {
         return ResponseEntity.status(200).body(residentService.addResident(residentDto));
     }
 
     @PutMapping("/{serialNumber}")
-    public ResponseEntity<ResidentDto> modify(@PathVariable Long serialNumber, @RequestBody RegisterResidentDto residentDto) {
+    public ResponseEntity<ResidentDto> modify(@PathVariable Long serialNumber, @RequestBody @Valid RegisterResidentDto residentDto) {
         return ResponseEntity.status(200).body(residentService.modify(residentDto, serialNumber));
     }
 }

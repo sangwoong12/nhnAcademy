@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="board:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36262683-2f63-4b3a-b84e-58c43fa4df0d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/0/0/0068027a6fa0b132f1dd6fbef6673e29a37a19ed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/2/b/2bc8ec7c2bb0b1d01c5c8bcad31f6aa12e6a6f9c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/5/0/507df117c75ebc81d9f9d37ea2f4c82949cc0078" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/5/b/5b4b07a50fb12ee029453cc37eb000405826ae5a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/5/c/5c81dd20a1d044f94590964cf4531a384b5acf17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/b/4/b4db7acfd16afd440014a24ebde8240c0eafd454" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/b/c/bcfb09c045ee6040b9a5ce4b21d67488edb0d912" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/c/1/c192b30d048f79ce19974f750d1d1c43814f61a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/d/3/d35185e8bc3fc4b3ae9473c90448cdc23abcdb96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/e/4/e46c6b376b104f707b1e9cf4d263fafe0a25bfce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../board/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PMPiPvwhuRkMxdfyOa1zVCPW98" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sangwoong/Documents/nhnAcademy/week_11/day_5/notice_board/src/main/_http&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1145f263256c923716d2b8eade2f6689&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nhnacademy.resident.domain.certficate_issue" />
+      <recent name="com.nhnacademy.resident.domain.household_movement_address" />
+      <recent name="com.nhnacademy.resident.domain.householdMovementADdress" />
+      <recent name="com.nhnacademy.resident.domain.household" />
+      <recent name="com.nhnacademy.resident.service.household" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/_http" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/image" />
+      <recent name="$PROJECT_DIR$/src/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/nhnacademy/board/repository/post" />
+      <recent name="$PROJECT_DIR$/src/main/resources/image" />
+      <recent name="$PROJECT_DIR$/src/main/resources/1.ㅔㅜㅎ" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nhnacademy.resident.repository" />
+      <recent name="com.nhnacademy.board.controller" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.nhnacademy.resident.service.resident" />
+      <recent name="com.nhnacademy.resident.repository" />
+      <recent name="com.nhnacademy.board.entity" />
+      <recent name="com.nhnacademy.board.controller" />
+      <recent name="com.nhnacademy.board.service.user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nhnacademy.resident.domain.birth_death_report_resident" />
+      <recent name="com.nhnacademy.resident.config" />
+      <recent name="com.nhnacademy.board.config" />
+      <recent name="com.nhnacademy.board.repository" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.73">
+    <configuration name="api | 가족관계 등록" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/api.http" index="3" requestIdentifier="가족관계 등록" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | 가족관계 삭제" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/api.http" index="5" requestIdentifier="가족관계 삭제" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="birth | 출생 신고서 삭제" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/_http/birth.http" index="3" requestIdentifier="출생 신고서 삭제" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="birth | 출생 신고서 수정" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/_http/birth.http" index="2" requestIdentifier="출생 신고서 수정" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="death | 사망 신고서 수정" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/_http/death.http" index="2" requestIdentifier="사망 신고서 수정" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="death | 사망 신고서 삭제" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/_http/death.http" index="3" requestIdentifier="사망 신고서 삭제" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="death | 사망 신고서 등록" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/_http/death.http" requestIdentifier="사망 신고서 등록" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.73" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.73" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="board:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="8e67b017-5f94-45d7-9688-ede24feff728" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59305" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="notice_board:war exploded" />
+          <artifact name="board:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.api | 가족관계 삭제" />
+      <item itemvalue="HTTP Request.birth | 출생 신고서 수정" />
+      <item itemvalue="HTTP Request.death | 사망 신고서 등록" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.73" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.death | 사망 신고서 등록" />
+        <item itemvalue="HTTP Request.birth | 출생 신고서 수정" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36262683-2f63-4b3a-b84e-58c43fa4df0d" name="Changes" comment="" />
+      <created>1683264103495</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683264103495</updated>
+      <workItem from="1683264104708" duration="36457000" />
+      <workItem from="1683387636374" duration="34676000" />
+      <workItem from="1683456298096" duration="15202000" />
+      <workItem from="1683553720800" duration="6076000" />
+      <workItem from="1683559913067" duration="1671000" />
+      <workItem from="1683609721563" duration="972000" />
+      <workItem from="1683619659560" duration="10021000" />
+      <workItem from="1683700502596" duration="904000" />
+      <workItem from="1683720914177" duration="18452000" />
+      <workItem from="1684073436555" duration="5397000" />
+      <workItem from="1684114290715" duration="3000" />
+      <workItem from="1684117138418" duration="6340000" />
+      <workItem from="1684255078844" duration="12618000" />
+      <workItem from="1684388982186" duration="21350000" />
+      <workItem from="1684474896004" duration="1684000" />
+      <workItem from="1684476625188" duration="13524000" />
+      <workItem from="1684502952772" duration="98320000" />
+      <workItem from="1684730614644" duration="598000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/nhnacademy/resident/mapper/post/PostMapperTest.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.25/spring-webmvc-5.3.25.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class</url>
+          <line>64</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.nhnacademy.resident.entity.Resident" memberName="familyRelationships" />
+        <PinnedItemInfo parentTag="com.nhnacademy.resident.entity.Resident" memberName="deathPlaceAddress" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((JdkDynamicAopProxy)this.h).advised" custom="org.springframework.aop.framework.JdkDynamicAopProxy,java.lang.reflect.Proxy" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest.ic" NAME="WebApplicationContextTest Coverage Results" MODIFIED="1683421887626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest_editProfileTest.ic" NAME="WebApplicationContextTest.editProfileTest Coverage Results" MODIFIED="1683422016673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/notice_board$WebApplicationContextTest_addProfileTest2.ic" NAME="WebApplicationContextTest.addProfileTest2 Coverage Results" MODIFIED="1683421707853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhnacademy.board.controller.*</FILTER>
+    </SUITE>
+  </component>
+</project>

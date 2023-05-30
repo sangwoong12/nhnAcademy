@@ -13,7 +13,7 @@ public class Household {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "household_serial_number")
     private Long householdSerialNumber;
-    @ManyToOne(cascade = CascadeType.DETACH)
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.REMOVE})
     @JoinColumn(name = "household_resident_serial_number")
     private Resident resident;
     @Column(name = "household_composition_date")

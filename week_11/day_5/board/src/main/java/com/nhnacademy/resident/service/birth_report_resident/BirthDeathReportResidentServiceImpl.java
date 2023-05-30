@@ -50,11 +50,11 @@ public class BirthDeathReportResidentServiceImpl implements BirthDeathReportResi
         birthDeathReportResidentRepository.deleteByPkAndReportResident_ResidentSerialNumber(pk, serialNumber);
     }
     public BirthReportDto findBirthReport(Long serialNumber) {
-        BirthDeathReportResident.Pk pk = BirthDeathReportResidentUtils.createPk(BirthDeathReportResident.BirthDeathType.출생, serialNumber);
+        BirthDeathReportResident.Pk pk = BirthDeathReportResidentUtils.createPk(BirthDeathReportResident.BirthDeathType.BIRTH, serialNumber);
         return birthDeathReportResidentRepository.findBirthByPk(pk);
     }
     public DeathReportDto findDeathReport(Long serialNumber) {
-        BirthDeathReportResident.Pk pk = BirthDeathReportResidentUtils.createPk(BirthDeathReportResident.BirthDeathType.사망, serialNumber);
+        BirthDeathReportResident.Pk pk = BirthDeathReportResidentUtils.createPk(BirthDeathReportResident.BirthDeathType.DEATH, serialNumber);
         return birthDeathReportResidentRepository.findDeathByPk(pk);
     }
 }

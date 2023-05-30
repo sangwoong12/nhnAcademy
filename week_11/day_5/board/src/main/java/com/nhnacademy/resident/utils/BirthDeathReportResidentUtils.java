@@ -14,7 +14,7 @@ public class BirthDeathReportResidentUtils {
         birthDeathReportResident.setBirthDeathReportDate(dto.getBirthDeathReportDate());
         birthDeathReportResident.setEmailAddress(dto.getEmailAddress());
         birthDeathReportResident.setPhoneNumber(dto.getPhoneNumber());
-        if (type.equals(BirthDeathReportResident.BirthDeathType.사망)) {
+        if (type.equals(BirthDeathReportResident.BirthDeathType.DEATH)) {
             birthDeathReportResident.setDeathReportQualificationsCode(dto.getReportQualificationsCode());
         } else {
             birthDeathReportResident.setBirthReportQualificationsCode(dto.getReportQualificationsCode());
@@ -26,7 +26,7 @@ public class BirthDeathReportResidentUtils {
         birthDeathReportResident.setBirthDeathReportDate(dto.getBirthDeathReportDate());
         birthDeathReportResident.setEmailAddress(dto.getEmailAddress());
         birthDeathReportResident.setPhoneNumber(dto.getPhoneNumber());
-        if (type.equals(BirthDeathReportResident.BirthDeathType.사망)) {
+        if (type.equals(BirthDeathReportResident.BirthDeathType.DEATH)) {
             birthDeathReportResident.setDeathReportQualificationsCode(dto.getReportQualificationsCode());
         } else {
             birthDeathReportResident.setBirthReportQualificationsCode(dto.getReportQualificationsCode());

@@ -15,6 +15,7 @@ public class HouseholdServiceImpl implements HouseholdService {
     HouseholdRepository householdRepository;
     ResidentRepository residentRepository;
 
+
     public HouseholdServiceImpl(HouseholdRepository householdRepository, ResidentRepository residentRepository) {
         this.householdRepository = householdRepository;
         this.residentRepository = residentRepository;

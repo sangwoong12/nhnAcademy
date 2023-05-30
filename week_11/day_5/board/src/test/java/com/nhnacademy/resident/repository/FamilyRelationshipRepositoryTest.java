@@ -2,7 +2,9 @@ package com.nhnacademy.resident.repository;
 
 import com.nhnacademy.resident.config.RootConfig;
 import com.nhnacademy.resident.config.WebConfig;
+import com.nhnacademy.resident.domain.family_relationship.FamilyRelationshipDto;
 import com.nhnacademy.resident.entity.FamilyRelationship;
+import com.nhnacademy.resident.utils.FamilyRelationshipUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,6 +32,17 @@ class FamilyRelationshipRepositoryTest {
 
     @Autowired
     private FamilyRelationshipRepository repository;
+
+    @Test
+    void findByPk() {
+        Long familySerialNumber = 1L;
+        Long serialNumber = 2L;
+        FamilyRelationship.Pk pk = FamilyRelationshipUtils.createPk(familySerialNumber, serialNumber);
+        FamilyRelationshipDto byPk = repository.findByPk(pk);
+
+        Assertions.assertThat(byPk.getPk().getBaseResidentSerialNumber()).isEqualTo(familySerialNumber);
+        Assertions.assertThat(byPk.getPk().getFamilyResidentSerialNumber()).isEqualTo(serialNumber);
+    }
 
     @Test
     void save() {

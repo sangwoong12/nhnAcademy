@@ -23,8 +23,6 @@ f
 6src/main/java/com/nhnacademy/board/item/post/Post.java,4/d/4d2227b8f6baec2b69ecd873175617b4421e6309
 i
 9src/main/java/com/nhnacademy/board/WebAppInitializer.java,7/e/7e8fd92c9c6534a1d846076d3fee911c39c472c6
-v
-Fsrc/test/java/com/nhnacademy/board/controller/LoginControllerTest.java,4/9/49474a2fc7023323237f97bd236cb2ef6306452e
 t
 Dsrc/main/java/com/nhnacademy/board/service/user/ImplUserService.java,c/2/c2754f1ad73f418f6d9f7755ac9e25cc54c42f3f
 t
@@ -77,3 +75,5 @@ Asrc/main/java/com/nhnacademy/board/config/DatabaseProperties.java,0/d/0dce1ecd
 src/insert.sql,9/f/9f2a6c5688e0f1415fef062e9671fad328de748e
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+v
+Fsrc/test/java/com/nhnacademy/board/controller/LoginControllerTest.java,4/9/49474a2fc7023323237f97bd236cb2ef6306452e

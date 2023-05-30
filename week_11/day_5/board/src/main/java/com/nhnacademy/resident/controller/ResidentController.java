@@ -42,6 +42,6 @@ public class ResidentController {
     @GetMapping("/{serialNumber}/delete")
     public String deleteResident(@PathVariable Long serialNumber) {
         residentService.deleteResident(serialNumber);
-        return "redirect:/resident?page=0size=20";
+        return "redirect:/residents?page=0size=20";
     }
 }

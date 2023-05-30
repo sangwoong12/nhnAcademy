@@ -23,7 +23,7 @@ public class BirthDeathReportResident {
     @JoinColumn(name = "resident_serial_number")
     private Resident resident;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "report_resident_serial_number")
     private Resident reportResident;
     @Column(name = "birth_death_report_date")
@@ -51,8 +51,8 @@ public class BirthDeathReportResident {
         private Long residentSerialNumber;
     }
     public enum BirthDeathType {
-        출생("출생"),
-        사망("사망");
+        BIRTH("출생"),
+        DEATH("사망");
 
         private String code;
 

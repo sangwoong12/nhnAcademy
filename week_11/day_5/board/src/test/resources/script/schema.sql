@@ -76,18 +76,18 @@ CREATE TABLE IF NOT EXISTS certificate_issue (
 
 commit;
 
-MERGE into resident values(1, '남길동', '130914-1234561', '남', '1913-09-14 07:22:00', '자택', '경기도 성남시 분당구 대왕판교로645번길', '2021-04-29 09:03:00', '주택', '강원도 고성군 금강산로 290번길');
-MERGE into resident values(2, '남석환', '540514-1234562', '남', '1954-05-14 17:30:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
-MERGE into resident values(3, '박한나', '551022-1234563', '여', '1955-10-22 11:15:00', '병원', '서울특별시 중구 세종대로 110번길', null, null, null);
-MERGE into resident values(4, '남기준', '790510-1234564', '남', '1979-05-10 20:45:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
-MERGE into resident values(5, '이주은', '820821-1234565', '여', '1982-08-21 01:28:00', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
-MERGE into resident values(6, '이선미', '851205-1234566', '여', '1985-12-05 22:01:00', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
-MERGE into resident values(7, '남기석', '120315-1234567', '남', '2012-03-15 14:59:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+MERGE into resident values(1, '남길동', '130914-1234561', 'M', '1913-09-14 07:22:00', '자택', '경기도 성남시 분당구 대왕판교로645번길', '2021-04-29 09:03:00', '주택', '강원도 고성군 금강산로 290번길');
+MERGE into resident values(2, '남석환', '540514-1234562', 'M', '1954-05-14 17:30:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+MERGE into resident values(3, '박한나', '551022-1234563', 'M', '1955-10-22 11:15:00', '병원', '서울특별시 중구 세종대로 110번길', null, null, null);
+MERGE into resident values(4, '남기준', '790510-1234564', 'M', '1979-05-10 20:45:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+MERGE into resident values(5, '이주은', '820821-1234565', 'F', '1982-08-21 01:28:00', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
+MERGE into resident values(6, '이선미', '851205-1234566', 'F', '1985-12-05 22:01:00', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
+MERGE into resident values(7, '남기석', '120315-1234567', 'M', '2012-03-15 14:59:00', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
 
 commit;
 
-MERGE into birth_death_report_resident values (7, '출생', 4, '20120317', '부', null, 'nam@nhnad.co.kr', '010-1234-5678');
-MERGE into birth_death_report_resident values (1, '사망', 2, '20200502', '비동거친족', null, null, '010-2345-6789');
+MERGE into birth_death_report_resident values (7, 'BIRTH', 4, '20120317', '부', null, 'nam@nhnad.co.kr', '010-1234-5678');
+MERGE into birth_death_report_resident values (1, 'DEATH', 2, '20200502', '비동거친족', null, null, '010-2345-6789');
 
 commit;
 

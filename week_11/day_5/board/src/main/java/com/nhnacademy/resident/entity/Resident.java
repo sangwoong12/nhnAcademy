@@ -64,8 +64,8 @@ public class Resident {
     List<BirthDeathReportResident> birthDeathReportResidents;
 
     public enum Gender{
-        여("여"),
-        남("남");
+        F("여"),
+        M("남");
 
         private String code;
 

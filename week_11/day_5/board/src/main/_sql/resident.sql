@@ -1,13 +1,11 @@
-# use nhn_academy_4;
-USE Module06;
--- 1. 기존 테이블 삭제
+use nhn_academy_4;
 drop table resident;
 drop table birth_death_report_resident;
+drop table certificate_issue;
 drop table family_relationship;
 drop table household;
-drop table household_movement_address;
 drop table household_composition_resident;
-drop table certificate_issue;
+drop table household_movement_address;
 
 
 -- 2. 테이블 생성
@@ -84,27 +82,27 @@ create table certificate_issue
 (
     certificate_confirmation_number bigint      not null,
     resident_serial_number          int         not null,
-    certificate_type_code           varchar(20) not null,
+    certificate_type_code           varchar(50) not null,
     certificate_issue_date          date        not null,
     primary key (certificate_confirmation_number)
 );
 
 
 -- 3. resident 테이블 데이터 추가
-insert into resident values(1, '남길동', '130914-1234561', '남', '19130914072200', '자택', '경기도 성남시 분당구 대왕판교로645번길', '20210429090300', '주택', '강원도 고성군 금강산로 290번길');
-insert into resident values(2, '남석환', '540514-1234562', '남', '19540514173000', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
-insert into resident values(3, '박한나', '551022-1234563', '여', '19551022111500', '병원', '서울특별시 중구 세종대로 110번길', null, null, null);
-insert into resident values(4, '남기준', '790510-1234564', '남', '19790510204500', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
-insert into resident values(5, '이주은', '820821-1234565', '여', '19820821012800', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
-insert into resident values(6, '이선미', '851205-1234566', '여', '19851205220100', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
-insert into resident values(7, '남기석', '120315-1234567', '남', '20120315145900', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+insert into resident values(1, '남길동', '130914-1234561', 'M', '19130914072200', '자택', '경기도 성남시 분당구 대왕판교로645번길', '20210429090300', '주택', '강원도 고성군 금강산로 290번길');
+insert into resident values(2, '남석환', '540514-1234562', 'M', '19540514173000', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+insert into resident values(3, '박한나', '551022-1234563', 'M', '19551022111500', '병원', '서울특별시 중구 세종대로 110번길', null, null, null);
+insert into resident values(4, '남기준', '790510-1234564', 'M', '19790510204500', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
+insert into resident values(5, '이주은', '820821-1234565', 'F', '19820821012800', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
+insert into resident values(6, '이선미', '851205-1234566', 'F', '19851205220100', '병원', '경기도 수원시 팔달구 효원로 1번길', null, null, null);
+insert into resident values(7, '남기석', '120315-1234567', 'M', '20120315145900', '병원', '경기도 성남시 분당구 대왕판교로645번길', null, null, null);
 
 commit;
 
 
 -- 4. birth_death_report_resident 테이블 데이터 추가
-insert into birth_death_report_resident values (7, '출생', 4, '20120317', '부', null, 'nam@nhnad.co.kr', '010-1234-5678');
-insert into birth_death_report_resident values (1, '사망', 2, '20200502', null, '비동거친족', null, '010-2345-6789');
+insert into birth_death_report_resident values (7, 'BIRTH', 4, '20120317', '부', null, 'nam@nhnad.co.kr', '010-1234-5678');
+insert into birth_death_report_resident values (1, 'DEATH', 2, '20200502', null, '비동거친족', null, '010-2345-6789');
 
 commit;
 
