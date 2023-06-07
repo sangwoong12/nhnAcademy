@@ -42,5 +42,20 @@
 ## 8주차 정산과제 ( 게시판 만들기 )
 - spring mvc 에 대한 전반적인 내용을 수업시간에 다룸
 - 이를 활용하여 간단한 게시판 만들기
-- [spring 게시판 바로가기] (https://github.com/sangwoong12/nhnAcademy/tree/main/week_8/day_5/homework/notice_board)
+- [spring 게시판 바로가기](https://github.com/sangwoong12/nhnAcademy/tree/main/week_8/day_5/homework/notice_board)
 
+## 9주차 정산과제 ( 항공권 예약 시스템 모델링 ) - 팀과제
+- database 설계
+- [항공권 예약 시스템 모델링](https://github.com/sangwoong12/nhnAcademy/tree/main/week_9/day_5/)
+
+## 10주차 정산과제 ( 게시판 만들기 )
+- 8주차에 개발했던 파일을 mybatis로 구현하기
+- [Mybatis 게시판 만들기](https://github.com/sangwoong12/nhnAcademy/tree/main/week_10/day_4/homework/notice_board)
+
+## 11주차, 12주차 정산과제 ( 주민등록등본, 가족관계증명서, 출생신고서, 사망신고서 )
+- 10주차에 개발했던 파일을 JPA로 구현하기
+- login을 security를 적용하여 구현하기
+- [주민등록등본, 가족관계증명서, 출생신고서, 사망신고서](https://github.com/sangwoong12/nhnAcademy/tree/main/week_12/day_5/homework/board)
+
+## 13주차 정산과제 ( docker 활용 )
+- docker에 전반적인 내용을 다룸
